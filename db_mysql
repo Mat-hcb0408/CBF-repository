@@ -51,3 +51,79 @@ CREATE TABLE ContratosFinanceiros (
     associados VARCHAR(50),
     descricaoContratos VARCHAR(150)
 );
+
+-- Inserir dados na tabela Dividas
+INSERT INTO Dividas (valorDividas, validade, juros, credor, fiador, tipoDeDivida, descricaoDividas)
+VALUES 
+(4000000.00, '2025-08-13', 300000.00, 'Banco Central', 'Walter Sarney', 'Empréstimo', 'Empréstimo com o objetivo de investir em infraestruturas.'),
+(2500000.00, '2026-05-20', 150000.00, 'Banco do Brasil', 'José da Silva', 'Empréstimo', 'Empréstimo com o objetivo de financiar a expansão das divisões de base e melhorar a infraestrutura de treinamento.');
+
+-- Inserir dados na tabela Receitas
+INSERT INTO Receitas (dataReceitas, valorReceitas, fonte, IRPJ, descricaoReceitas)
+VALUES
+('2024-01-15', 50000000.00, 'Patrocínios', 1000000.00, 'Receita proveniente de contratos de patrocínio para as seleções brasileiras de futebol.');
+
+-- Inserir dados na tabela Transacoes
+INSERT INTO Transacoes (dataTransacoes, valorTransacoes, destinatarioTransacoes, remetenteTransacoes, descricaoTransacoes)
+VALUES
+('2024-01-10', 5000000.00, 'Nike', 'CBF', 'Pagamento de patrocínio de contrato anual com a Nike.');
+
+-- Inserir dados na tabela Despesas
+INSERT INTO Despesas (dataDespesas, valorDespesas, destinatarioDespesas, remetenteDespesas, descricaoDespesas)
+VALUES
+('2024-01-20', 1000000.00, 'Empresas de Transporte', 'CBF', 'Despesas com transporte para equipes durante as competições internacionais.');
+
+-- Inserir dados na tabela ContratosFinanceiros
+INSERT INTO ContratosFinanceiros (inicioDeContrato, encerramentoDeContrato, associados, descricaoContratos)
+VALUES
+('2024-01-01', '2026-12-31', 'Nike', 'Contrato de patrocínio com a Nike para todas as seleções da CBF.');
+
+-- Criar tabela Federacoes
+CREATE TABLE Federacoes (
+    idFederacao INT AUTO_INCREMENT PRIMARY KEY,
+    nome_federacao VARCHAR(60),
+    sigla_federacao VARCHAR(60),
+    estado_federacao VARCHAR(60)
+);
+
+-- Criar tabela Clubes
+CREATE TABLE Clubes (
+    idClube INT AUTO_INCREMENT PRIMARY KEY,
+    nome_clube VARCHAR(60),
+    anoFundacao INT,
+    estado VARCHAR(60),
+    escudo BLOB,  -- Use BLOB para armazenar imagens em MySQL
+    idFederacao INT,
+    FOREIGN KEY (idFederacao) REFERENCES Federacoes(idFederacao)
+);
+
+-- Criar tabela Atletas
+CREATE TABLE Atletas (
+    IdAtleta INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(60),
+    dataNascimento DATE,
+    apelido VARCHAR(60),
+    numeracao INT
+);
+
+-- Criar tabela Arbitros
+CREATE TABLE Arbitros (
+    IdArbitro INT AUTO_INCREMENT PRIMARY KEY,
+    nome VARCHAR(60),
+    idFederacao INT,
+    FOREIGN KEY (idFederacao) REFERENCES Federacoes(idFederacao)
+);
+
+-- Criar tabela ContratosAtletas
+CREATE TABLE ContratosAtletas (
+    IdContratoAtleta INT AUTO_INCREMENT PRIMARY KEY,
+    DataInicio DATE,
+    DataFim DATE,
+    TipoContrato VARCHAR(60),
+    ativo BOOLEAN,  -- Use BOOLEAN em vez de BIT em MySQL
+    idClube INT,
+    idAtleta INT,
+    FOREIGN KEY (idClube) REFERENCES Clubes(idClube),
+    FOREIGN KEY (idAtleta) REFERENCES Atletas(idAtleta)
+);
+
