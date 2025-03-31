@@ -94,7 +94,7 @@ CREATE TABLE ContratosAtletas (
     dataInicio DATE,
     dataFim DATE,
     tipoContrato VARCHAR(60),
-    ativo BOOLEAN,  -- BOOLEAN em vez de BIT
+    ativo BOOLEAN, 
     idClube INT,
     idAtleta INT,
     FOREIGN KEY (idClube) REFERENCES Clubes(idClube),
