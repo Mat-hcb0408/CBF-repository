@@ -1,0 +1,53 @@
+CREATE DATABASE tarde_bd_cbf;
+USE tarde_bd_cbf;
+
+-- Tabela Dividas
+CREATE TABLE Dividas (
+    idDivida INT AUTO_INCREMENT PRIMARY KEY,
+    valorDividas FLOAT,
+    validade DATE,
+    juros FLOAT,
+    credor VARCHAR(50),
+    fiador VARCHAR(50),
+    tipoDeDivida VARCHAR(50),
+    descricaoDividas VARCHAR(150)
+);
+
+-- Tabela Receitas
+CREATE TABLE Receitas (
+    idReceita INT AUTO_INCREMENT PRIMARY KEY,
+    dataReceitas DATE,
+    valorReceitas FLOAT,
+    fonte VARCHAR(50),
+    IRPJ FLOAT,
+    descricaoReceitas VARCHAR(150)
+);
+
+-- Tabela Transacoes
+CREATE TABLE Transacoes (
+    idTransacao INT AUTO_INCREMENT PRIMARY KEY,
+    dataTransacoes DATE,
+    valorTransacoes FLOAT,
+    destinatarioTransacoes VARCHAR(50),
+    remetenteTransacoes VARCHAR(50),
+    descricaoTransacoes VARCHAR(150)
+);
+
+-- Tabela Despesas
+CREATE TABLE Despesas (
+    idDespesa INT AUTO_INCREMENT PRIMARY KEY,
+    dataDespesas DATE,
+    valorDespesas FLOAT,
+    destinatarioDespesas VARCHAR(50),
+    remetenteDespesas VARCHAR(50),
+    descricaoDespesas VARCHAR(150)
+);
+
+-- Tabela ContratosFinanceiros
+CREATE TABLE ContratosFinanceiros (
+    idContratoFinanceiro INT AUTO_INCREMENT PRIMARY KEY,
+    inicioDeContrato DATE,
+    encerramentoDeContrato DATE,
+    associados VARCHAR(50),
+    descricaoContratos VARCHAR(150)
+);
