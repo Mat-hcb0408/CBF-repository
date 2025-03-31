@@ -120,7 +120,7 @@ CREATE TABLE ContratosAtletas (
     DataInicio DATE,
     DataFim DATE,
     TipoContrato VARCHAR(60),
-    ativo BOOLEAN,  -- Use BOOLEAN em vez de BIT em MySQL
+    ativo BOOLEAN,  --BOOLEAN em vez de BIT
     idClube INT,
     idAtleta INT,
     FOREIGN KEY (idClube) REFERENCES Clubes(idClube),
