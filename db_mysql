@@ -52,31 +52,6 @@ CREATE TABLE ContratosFinanceiros (
     descricaoContratos VARCHAR(150)
 );
 
--- Inserir dados na tabela Dividas
-INSERT INTO Dividas (valorDividas, validade, juros, credor, fiador, tipoDeDivida, descricaoDividas)
-VALUES 
-(4000000.00, '2025-08-13', 300000.00, 'Banco Central', 'Walter Sarney', 'Empréstimo', 'Empréstimo com o objetivo de investir em infraestruturas.'),
-(2500000.00, '2026-05-20', 150000.00, 'Banco do Brasil', 'José da Silva', 'Empréstimo', 'Empréstimo com o objetivo de financiar a expansão das divisões de base e melhorar a infraestrutura de treinamento.');
-
--- Inserir dados na tabela Receitas
-INSERT INTO Receitas (dataReceitas, valorReceitas, fonte, IRPJ, descricaoReceitas)
-VALUES
-('2024-01-15', 50000000.00, 'Patrocínios', 1000000.00, 'Receita proveniente de contratos de patrocínio para as seleções brasileiras de futebol.');
-
--- Inserir dados na tabela Transacoes
-INSERT INTO Transacoes (dataTransacoes, valorTransacoes, destinatarioTransacoes, remetenteTransacoes, descricaoTransacoes)
-VALUES
-('2024-01-10', 5000000.00, 'Nike', 'CBF', 'Pagamento de patrocínio de contrato anual com a Nike.');
-
--- Inserir dados na tabela Despesas
-INSERT INTO Despesas (dataDespesas, valorDespesas, destinatarioDespesas, remetenteDespesas, descricaoDespesas)
-VALUES
-('2024-01-20', 1000000.00, 'Empresas de Transporte', 'CBF', 'Despesas com transporte para equipes durante as competições internacionais.');
-
--- Inserir dados na tabela ContratosFinanceiros
-INSERT INTO ContratosFinanceiros (inicioDeContrato, encerramentoDeContrato, associados, descricaoContratos)
-VALUES
-('2024-01-01', '2026-12-31', 'Nike', 'Contrato de patrocínio com a Nike para todas as seleções da CBF.');
 
 -- Criar tabela Federacoes
 CREATE TABLE Federacoes (
