@@ -13,44 +13,6 @@ create table Dividas (
 	descricaoDividas varchar(150)
 );
 
-create table Receitas(
-	idReceita int IDENTITY(1, 1) primary key,
-	dataReceitas date,
-	valorReceitas float,
-	fonte varchar(50),
-	IRPJ float,
-	descricaoReceitas varchar(150)
-);
-
-create table Transacoes (
-	idTransacao int IDENTITY(1, 1) primary key,
-	dataTransacoes date,
-	valorTransacoes float,
-	destinatarioTransacoes varchar(50),
-	remetenteTransacoes varchar(50),
-	descricaoTransacoes varchar(150)
-);
-
-create table Despesas(
-	idDespesa int IDENTITY(1, 1) primary key,
-	dataDespesas date,
-	valorDespesas float,
-	destinatarioDespesas varchar(50),
-	remetenteDespesas varchar(50),
-	descricaoDespesas varchar(150),
-
-);
-
-create table ContratosFinanceiros(
-	idContratoFinanceiro int IDENTITY(1, 1) primary key,
-	inicioDeContrato date,
-	encerramentoDeContrato date,
-	associados varchar(50),
-	descricaoContratos varchar(150),
-);
-
-go
-
 insert into Dividas(valorDividas, validade, juros, credor, fiador, tipoDeDivida, descricaoDividas)
 values ( 4000000.00, '2025-08-13', 300000.00, 'Banco Central', 'Walter Sarney', 'Empréstimo', 'Empréstimo com o objetivo de investir em infraestruturas.'),
 ( 2500000.00, '2026-05-20', 150000.00, 'Banco do Brasil', 'José da Silva', 'Empréstimo', 'Empréstimo com o objetivo de financiar a expansão das divisões de base e melhorar a infraestrutura de treinamento.'),
@@ -67,6 +29,15 @@ values ( 4000000.00, '2025-08-13', 300000.00, 'Banco Central', 'Walter Sarney', 
 ( 4000000.00, '2025-12-25', 180000.00, 'Banco da Amazônia', 'Felipe Carvalho', 'Empréstimo', 'Empréstimo para a expansão do futebol feminino e apoio a atletas de base.'),
 ( 3000000.00, '2025-09-30', 170000.00, 'Banco Rural', 'Maria Clara Ferreira', 'Empréstimo', 'Empréstimo destinado ao desenvolvimento do futebol nas categorias de base e futebol de salão.'),
 ( 2000000.00, '2026-07-05', 140000.00, 'Banco do Estado de São Paulo', 'Thiago Martins', 'Empréstimo', 'Empréstimo para melhorias no gerenciamento de torneios e apoio ao futebol local.');
+
+create table Receitas(
+	idReceita int IDENTITY(1, 1) primary key,
+	dataReceitas date,
+	valorReceitas float,
+	fonte varchar(50),
+	IRPJ float,
+	descricaoReceitas varchar(150)
+);
 
 insert into Receitas(dataReceitas, valorReceitas, fonte, IRPJ, descricaoReceitas)
 values
@@ -87,6 +58,15 @@ values
 ('2026-06-20', 18000000.00, 'Patrocínios', 360000.00, 'Novo contrato de patrocínio com um grande banco nacional.'),
 ('2026-08-10', 5000000.00, 'Taxas de Inscrição', 100000.00, 'Taxas recebidas de clubes participantes da Copa do Brasil.');
 
+create table Transacoes (
+	idTransacao int IDENTITY(1, 1) primary key,
+	dataTransacoes date,
+	valorTransacoes float,
+	destinatarioTransacoes varchar(50),
+	remetenteTransacoes varchar(50),
+	descricaoTransacoes varchar(150)
+);
+
 insert into Transacoes(dataTransacoes, valorTransacoes, destinatarioTransacoes, remetenteTransacoes, descricaoTransacoes)
 values
 ('2024-01-10', 5000000.00, 'Nike', 'CBF', 'Pagamento de patrocínio de contrato anual com a Nike.'),
@@ -105,6 +85,16 @@ values
 ('2025-12-15', 2000000.00, 'CBF', 'Agência Z', 'Pagamento à agência de publicidade para campanhas de marketing de competições internacionais.'),
 ('2026-01-10', 3500000.00, 'CBF', 'SBT', 'Pagamento referente aos direitos de transmissão dos jogos da Seleção Brasileira para o SBT.');
 
+create table Despesas(
+	idDespesa int IDENTITY(1, 1) primary key,
+	dataDespesas date,
+	valorDespesas float,
+	destinatarioDespesas varchar(50),
+	remetenteDespesas varchar(50),
+	descricaoDespesas varchar(150),
+
+);
+
 insert into Despesas(dataDespesas, valorDespesas, destinatarioDespesas, remetenteDespesas, descricaoDespesas)
 values
 ('2024-01-20', 1000000.00, 'Empresas de Transporte', 'CBF', 'Despesas com transporte para equipes durante as competições internacionais.'),
@@ -122,6 +112,14 @@ values
 ('2025-11-18', 1000000.00, 'Serviços de Comunicação', 'CBF', 'Despesas com assessoria de imprensa e comunicação durante eventos.'),
 ('2025-12-12', 2500000.00, 'Viagens e Hotéis', 'CBF', 'Despesas com viagens e hospedagem para a Copa América.'),
 ('2026-01-01', 1500000.00, 'Consultoria de Marketing', 'CBF', 'Pagamento de consultoria especializada para novos contratos de patrocínio.');
+
+create table ContratosFinanceiros(
+	idContratoFinanceiro int IDENTITY(1, 1) primary key,
+	inicioDeContrato date,
+	encerramentoDeContrato date,
+	associados varchar(50),
+	descricaoContratos varchar(150),
+);
 
 insert into ContratosFinanceiros(inicioDeContrato, encerramentoDeContrato, associados, descricaoContratos)
 values
@@ -149,65 +147,6 @@ create table Federacoes (
 
 );
 
-create table Clubes(
-	idClube int identity (1,1) primary key,
-	nome_clube varchar (60),
-	anoFundacao int,
-	estado varchar(60),
-	escudo IMAGE,
-	idFederacao int, 
-	constraint fk_clubes_federacoes foreign key (idFederacao) references Federacoes (idFederacao) 
-
-);
-
-create table Atletas( 
-	IdAtleta int identity (1,1) primary key,
-	nome varchar (60),
-	dataNascimento date,
-	apelido varchar(60),
-	numeracao int
-
-);
-
-create table Arbitros(
-	IdArbitro int identity (1,1) primary key, 
-	nome varchar(60),
-	idFederacao int, 
-	constraint fk_arbitros_federacoes foreign key (idFederacao) references Federacoes (idFederacao)
-);
-
-create table ContratosAtletas(
-	IdContratoAtleta int identity (1,1)primary key,
-	DataInicio date,
-	DataFim date,
-	TipoContrato varchar(60),
-	ativo bit,
-	idClube int, 
-	idAtleta int,
-	constraint fk_contratos_clubes foreign key (idClube) references Clubes (idClube),
-	constraint fk_contratos_atletas foreign key (idAtleta) references Atletas (idAtleta)   
-);
-
-go 
-
-create trigger atualizaca_ContratosAtletas
-on ContratosAtletas
-after insert 
-as
-begin
-	declare
-	@idAtleta int,
-	@idContrato int
-
-	select @IdAtleta = idAtleta,
-	@idContrato = idContratoAtleta from inserted 
-
-	update ContratosAtletas set ativo = 0 where idAtleta = @idAtleta and
-	idContratoAtleta <> @idContrato
-end
-
-go
-
 insert into Federacoes (nome_federacao, sigla_federacao, estado_federacao)
 values 
 ('Federação de Futebol do Estado do Rio de Janeiro', 'FFERJ', 'Rio de Janeiro'),
@@ -227,6 +166,17 @@ values
 ('Federação Maranhense de Futebol', 'FMF', 'Maranhão'),
 ('Federação Norte-Rio-Grandense de Futebol', 'FNF', 'Rio Grande do Norte')
 ;
+
+create table Clubes(
+	idClube int identity (1,1) primary key,
+	nome_clube varchar (60),
+	anoFundacao int,
+	estado varchar(60),
+	escudo IMAGE,
+	idFederacao int, 
+	constraint fk_clubes_federacoes foreign key (idFederacao) references Federacoes (idFederacao) 
+
+);
 
 insert into Clubes (nome_clube, anoFundacao, estado, escudo, idFederacao) 
 values
@@ -276,6 +226,15 @@ values
 ('ABC', 1915, 'Rio Grande do Norte', 'https://www.gstatic.com/onebox/sports/logos/crest_48dp.png', 16)
 ;
 
+create table Atletas( 
+	IdAtleta int identity (1,1) primary key,
+	nome varchar (60),
+	dataNascimento date,
+	apelido varchar(60),
+	numeracao int
+
+);
+
 insert into Atletas (nome, dataNascimento, apelido, numeracao)
 values 
 ('Cássio Roberto Ramos', '1987-06-06', 'Cássio', 1),
@@ -292,11 +251,19 @@ values
 ('Gabriel Barbosa Almeida', '1996-08-30', 'Gabi', 9),
 ('Kaio Jorge Pinto Ramos', '2002-01-24', 'Kaio Jorge', 19)
 ;
+
 insert into Atletas (nome, dataNascimento, apelido)
 values 
 ('Fernando Diniz Silva', '1974-03-27', 'Fernando Diniz'),
 ('Eduardo Maciel de Barros', '1985-03-08', 'Eduardo Barros')
 ;
+
+create table Arbitros(
+	IdArbitro int identity (1,1) primary key, 
+	nome varchar(60),
+	idFederacao int, 
+	constraint fk_arbitros_federacoes foreign key (idFederacao) references Federacoes (idFederacao)
+);
 
 insert into Arbitros (nome, idFederacao)
 values
@@ -316,6 +283,34 @@ values
 ('Rodrigo D''Alonso Ferreira', 8),
 ('Rodrigo Guarizo Ferreira do Amaral', 2)
 ;
+
+create table ContratosAtletas(
+	IdContratoAtleta int identity (1,1)primary key,
+	DataInicio date,
+	DataFim date,
+	TipoContrato varchar(60),
+	ativo bit,
+	idClube int, 
+	idAtleta int,
+	constraint fk_contratos_clubes foreign key (idClube) references Clubes (idClube),
+	constraint fk_contratos_atletas foreign key (idAtleta) references Atletas (idAtleta)   
+);
+
+create trigger atualizaca_ContratosAtletas
+on ContratosAtletas
+after insert 
+as
+begin
+	declare
+	@idAtleta int,
+	@idContrato int
+
+	select @IdAtleta = idAtleta,
+	@idContrato = idContratoAtleta from inserted
+
+	update ContratosAtletas set ativo = 0 where idAtleta = @idAtleta and
+	idContratoAtleta <> @idContrato
+end
 
 insert into ContratosAtletas (DataInicio, DataFim, TipoContrato, ativo, idClube, idAtleta)
 values 
@@ -349,45 +344,6 @@ create table brasileirao_serieA_2024 (
 	constraint fk_brasileiraoSerieA2024_clubes foreign key (idClube) references Clubes(idClube)
 );
 
-create table brasileirao_serieA_2023 (
-	idClube int,
-	pontos int, 
-	jogos int,
-	vitorias int,
-	empates int,
-	derrotas int,
-	golsPro int, 
-	golsSofridos int,
-	saldoGols as (golsPro - golsSofridos),
-	constraint fk_brasileiraoSerieA2023_clubes foreign key (idClube) references Clubes(idClube)
-);
-
-create table brasileirao_serieB_2024 (
-	idClube int,
-	pontos int, 
-	jogos int,
-	vitorias int,
-	empates int,
-	derrotas int,
-	golsPro int, 
-	golsSofridos int,
-	saldoGols as (golsPro - golsSofridos),
-	constraint fk_brasileiraoSerieB2024_clubes foreign key (idClube) references Clubes(idClube)
-);
-
-create table brasileirao_serieB_2023 (
-	idClube int,
-	pontos int, 
-	jogos int,
-	vitorias int,
-	empates int,
-	derrotas int,
-	golsPro int, 
-	golsSofridos int,
-	saldoGols as (golsPro - golsSofridos),
-	constraint fk_brasileiraoSerieB2023_clubes foreign key (idClube) references Clubes(idClube)
-);
-
 insert into brasileirao_serieA_2024 (idClube, jogos, vitorias, empates, derrotas, golsPro, golsSofridos)
 values 
 (1, 36, 21, 10, 5, 56, 28),
@@ -410,6 +366,19 @@ values
 (16, 36, 8, 14, 14, 37, 46),
 (20, 36, 6, 12, 18, 28, 46),
 (19, 36, 6, 9, 21, 26, 55);
+
+create table brasileirao_serieA_2023 (
+	idClube int,
+	pontos int, 
+	jogos int,
+	vitorias int,
+	empates int,
+	derrotas int,
+	golsPro int, 
+	golsSofridos int,
+	saldoGols as (golsPro - golsSofridos),
+	constraint fk_brasileiraoSerieA2023_clubes foreign key (idClube) references Clubes(idClube)
+);
 
 INSERT INTO brasileirao_serieA_2023 (idClube, pontos, jogos, vitorias, empates, derrotas, golsPro, golsSofridos) 
 VALUES
@@ -434,6 +403,19 @@ VALUES
 (23, 30, 38, 7, 9, 22, 29, 60),
 (24, 24, 38, 5, 9, 24, 28, 65);
 
+create table brasileirao_serieB_2024 (
+	idClube int,
+	pontos int, 
+	jogos int,
+	vitorias int,
+	empates int,
+	derrotas int,
+	golsPro int, 
+	golsSofridos int,
+	saldoGols as (golsPro - golsSofridos),
+	constraint fk_brasileiraoSerieB2024_clubes foreign key (idClube) references Clubes(idClube)
+);
+
 INSERT INTO brasileirao_serieB_2024 (idClube, pontos, jogos, vitorias, empates, derrotas, golsPro, golsSofridos) 
 VALUES
 (21, 68, 38, 20, 8, 10, 57, 32),
@@ -456,6 +438,19 @@ VALUES
 (38, 37, 38, 11, 4, 23, 43, 63),
 (39, 36, 38, 8, 12, 18, 24, 44),
 (40, 33, 38, 8, 9, 21, 33, 53);
+
+create table brasileirao_serieB_2023 (
+	idClube int,
+	pontos int, 
+	jogos int,
+	vitorias int,
+	empates int,
+	derrotas int,
+	golsPro int, 
+	golsSofridos int,
+	saldoGols as (golsPro - golsSofridos),
+	constraint fk_brasileiraoSerieB2023_clubes foreign key (idClube) references Clubes(idClube)
+);
 
 INSERT INTO brasileirao_serieB_2023 (idClube, pontos, jogos, vitorias, empates, derrotas, golsPro, golsSofridos) 
 VALUES
@@ -487,14 +482,6 @@ create table Partidas (
 	realizacao date
 );
 
-create table Confrontos (
-	idClube int,
-	idPartida int,
-	mandante bit, 
-	constraint fk_clube_confronto foreign key (idClube) references Clubes(idClube),
-	constraint fk_partida_confronto foreign key (idPartida) references Partidas(idPartida)
-);
-
 insert into Partidas (golsMandante, golsVisitante, realizacao)
 values 
 (3, 0, '2024-12-03'),
@@ -518,6 +505,14 @@ values
 (0, 3, '2024-12-08'),
 (0, 1, '2024-12-08'),
 (2, 2, '2024-12-08');
+
+create table Confrontos (
+	idClube int,
+	idPartida int,
+	mandante bit, 
+	constraint fk_clube_confronto foreign key (idClube) references Clubes(idClube),
+	constraint fk_partida_confronto foreign key (idPartida) references Partidas(idPartida)
+);
 
 go
 
