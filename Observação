@@ -1,4 +1,6 @@
-O banco de dados que você criou parece ser para gerenciar informações financeiras, contratuais e administrativas relacionadas a clubes de futebol, atletas e federações. O propósito do banco de dados é centralizar e organizar dados sobre dívidas, receitas, transações financeiras, despesas e contratos, especificamente no contexto de clubes de futebol e suas interações com atletas, árbitros e federações.
+O banco de dados que você criou parece ser para gerenciar informações financeiras, contratuais e administrativas relacionadas a clubes de futebol, atletas e federações. 
+O propósito do banco de dados é centralizar e organizar dados sobre dívidas, receitas, transações financeiras, despesas e contratos, especificamente no contexto de clubes de futebol e suas interações com atletas,
+árbitros e federações.
 
 Aqui está um resumo das tabelas e seus propósitos:
 
@@ -22,4 +24,5 @@ Arbitros: Contém dados sobre os árbitros, incluindo nome e a federação à qu
 
 ContratosAtletas: Armazena os contratos dos atletas, com informações sobre o início e fim do contrato, tipo de contrato, status ativo ou inativo, e os clubes e atletas envolvidos no contrato.
 
-Em resumo, o banco de dados serve para gerenciar informações financeiras e contratuais de clubes de futebol, incluindo suas receitas, despesas, dívidas, transações financeiras, e detalhes sobre contratos de atletas, árbitros e outros aspectos administrativos dos clubes e federações. Ele pode ser útil para um sistema de gestão financeira, operacional e administrativa de clubes de futebol.
+Em resumo, o banco de dados serve para gerenciar informações financeiras e contratuais de clubes de futebol, incluindo suas receitas, despesas, dívidas, transações financeiras, e detalhes sobre contratos de atletas, 
+árbitros e outros aspectos administrativos dos clubes e federações. Ele pode ser útil para um sistema de gestão financeira, operacional e administrativa de clubes de futebol.
