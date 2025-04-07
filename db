@@ -30,6 +30,7 @@ values ( 4000000.00, '2025-08-13', 300000.00, 'Banco Central', 'Walter Sarney', 
 ( 3000000.00, '2025-09-30', 170000.00, 'Banco Rural', 'Maria Clara Ferreira', 'Empréstimo', 'Empréstimo destinado ao desenvolvimento do futebol nas categorias de base e futebol de salão.'),
 ( 2000000.00, '2026-07-05', 140000.00, 'Banco do Estado de São Paulo', 'Thiago Martins', 'Empréstimo', 'Empréstimo para melhorias no gerenciamento de torneios e apoio ao futebol local.');
 
+go
 create table Receitas(
 	idReceita int IDENTITY(1, 1) primary key,
 	dataReceitas date,
@@ -58,6 +59,7 @@ values
 ('2026-06-20', 18000000.00, 'Patrocínios', 360000.00, 'Novo contrato de patrocínio com um grande banco nacional.'),
 ('2026-08-10', 5000000.00, 'Taxas de Inscrição', 100000.00, 'Taxas recebidas de clubes participantes da Copa do Brasil.');
 
+go
 create table Transacoes (
 	idTransacao int IDENTITY(1, 1) primary key,
 	dataTransacoes date,
@@ -85,6 +87,7 @@ values
 ('2025-12-15', 2000000.00, 'CBF', 'Agência Z', 'Pagamento à agência de publicidade para campanhas de marketing de competições internacionais.'),
 ('2026-01-10', 3500000.00, 'CBF', 'SBT', 'Pagamento referente aos direitos de transmissão dos jogos da Seleção Brasileira para o SBT.');
 
+go
 create table Despesas(
 	idDespesa int IDENTITY(1, 1) primary key,
 	dataDespesas date,
@@ -113,6 +116,7 @@ values
 ('2025-12-12', 2500000.00, 'Viagens e Hotéis', 'CBF', 'Despesas com viagens e hospedagem para a Copa América.'),
 ('2026-01-01', 1500000.00, 'Consultoria de Marketing', 'CBF', 'Pagamento de consultoria especializada para novos contratos de patrocínio.');
 
+go
 create table ContratosFinanceiros(
 	idContratoFinanceiro int IDENTITY(1, 1) primary key,
 	inicioDeContrato date,
@@ -138,7 +142,8 @@ values
 ('2025-10-10', '2028-10-10', 'FIFA', 'Contrato de realização de eventos internacionais com a FIFA.'),
 ('2026-01-01', '2029-01-01', 'Coca-Cola', 'Contrato de patrocínio global com a Coca-Cola para todas as seleções.'),
 ('2026-03-01', '2029-03-01', 'Gillette', 'Contrato de patrocínio exclusivo com a Gillette para eventos da CBF.');
- 
+
+go
 create table Federacoes ( 
 	idFederacao int identity ( 1,1) primary key,
 	nome_federacao varchar (60),
@@ -167,6 +172,7 @@ values
 ('Federação Norte-Rio-Grandense de Futebol', 'FNF', 'Rio Grande do Norte')
 ;
 
+go
 create table Clubes(
 	idClube int identity (1,1) primary key,
 	nome_clube varchar (60),
@@ -226,6 +232,7 @@ values
 ('ABC', 1915, 'Rio Grande do Norte', 'https://www.gstatic.com/onebox/sports/logos/crest_48dp.png', 16)
 ;
 
+go
 create table Atletas( 
 	IdAtleta int identity (1,1) primary key,
 	nome varchar (60),
@@ -258,6 +265,7 @@ values
 ('Eduardo Maciel de Barros', '1985-03-08', 'Eduardo Barros')
 ;
 
+go
 create table Arbitros(
 	IdArbitro int identity (1,1) primary key, 
 	nome varchar(60),
@@ -284,6 +292,7 @@ values
 ('Rodrigo Guarizo Ferreira do Amaral', 2)
 ;
 
+go
 create table ContratosAtletas(
 	IdContratoAtleta int identity (1,1)primary key,
 	DataInicio date,
@@ -331,6 +340,7 @@ values
 ('2024-09-24', '2026-12-31', 'Contrato Treinador/Assistente Técnico', 1, 9, 15)
 ;
 
+go
 create table brasileirao_serieA_2024 (
 	idClube int,
 	pontos as ((vitorias*3) + empates), 
@@ -367,6 +377,7 @@ values
 (20, 36, 6, 12, 18, 28, 46),
 (19, 36, 6, 9, 21, 26, 55);
 
+go
 create table brasileirao_serieA_2023 (
 	idClube int,
 	pontos int, 
@@ -403,6 +414,7 @@ VALUES
 (23, 30, 38, 7, 9, 22, 29, 60),
 (24, 24, 38, 5, 9, 24, 28, 65);
 
+go
 create table brasileirao_serieB_2024 (
 	idClube int,
 	pontos int, 
@@ -439,6 +451,7 @@ VALUES
 (39, 36, 38, 8, 12, 18, 24, 44),
 (40, 33, 38, 8, 9, 21, 33, 53);
 
+go
 create table brasileirao_serieB_2023 (
 	idClube int,
 	pontos int, 
@@ -475,6 +488,7 @@ VALUES
 (43, 31, 38, 7, 10, 21, 31, 58),
 (44, 28, 38, 5, 13, 20, 28, 51);
 
+go
 create table Partidas (
 	idPartida int identity(1, 1) primary key,
 	golsMandante int,
@@ -506,6 +520,7 @@ values
 (0, 1, '2024-12-08'),
 (2, 2, '2024-12-08');
 
+go
 create table Confrontos (
 	idClube int,
 	idPartida int,
