@@ -1,0 +1,89 @@
+#topBar {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #0033cc, #0000ff);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 5, 0.5, 0, 2);
+}
+
+#lblTitulo {
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+.root {
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-background-color: #f9f9f9;
+}
+
+/* Barra superior (azul já definida inline no FXML) */
+.pane {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0.3, 0, 2);
+}
+
+/* Título */
+.label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #333;
+}
+
+.label#lblTotal {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #333;
+}
+
+/* Botões */
+.button {
+    -fx-background-color: white;
+    -fx-text-fill: #000;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: #ccc;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 3, 0.5, 0, 1);
+    -fx-padding: 6 14 6 14;
+    -fx-cursor: hand;
+    -fx-transition: all 0.3s ease;
+}
+
+.button:hover {
+    -fx-background-color: #f0f0f0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 5, 0.5, 0, 2);
+}
+
+/* Campo de texto */
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 6;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 3, 0.3, 0, 1);
+}
+
+.text-field:focused {
+    -fx-border-color: #0000FF; /* cor azul já usada no topo */
+    -fx-effect: dropshadow(gaussian, #0000FF, 4, 0.5, 0, 1);
+}
+
+/* Tabela */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 6;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 4, 0.5, 0, 1);
+    -fx-padding: 5;
+}
+
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #e0e0e0, #d0d0d0);
+}
+
+.table-view .column-header,
+.table-view .filler {
+    -fx-size: 32px;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #333;
+    -fx-font-weight: bold;
+}

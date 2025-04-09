@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0"
+            stylesheets="@style.css"
+            xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="org.example.projeto.DividasController">
+
+    <!-- Barra superior -->
+    <Pane fx:id="topBar" prefHeight="60.0" AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+        <children>
+            <Label fx:id="lblTitulo" layoutX="24.0" layoutY="13.0" text="📋 GERENCIAMENTO DE DÍVIDAS" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="24.0" />
+                </font>
+            </Label>
+        </children>
+    </Pane>
+
+    <!-- Campo de busca e botões superiores -->
+    <TextField fx:id="txtPesquisar" promptText="🔍 Pesquisar..." prefWidth="300.0"
+               AnchorPane.topAnchor="70.0" AnchorPane.leftAnchor="39.0" />
+
+    <Button fx:id="btnBuscar" text="Buscar" prefWidth="100.0"
+            AnchorPane.topAnchor="70.0" AnchorPane.leftAnchor="349.0" />
+
+    <Button fx:id="btnNova" text="➕ Nova" prefWidth="100.0"
+            AnchorPane.topAnchor="70.0" AnchorPane.leftAnchor="460.0" />
+
+    <!-- Linha de botões secundários -->
+    <HBox spacing="10" AnchorPane.topAnchor="110.0" AnchorPane.leftAnchor="39.0">
+        <children>
+            <Button fx:id="btnEditar" text="Editar" prefWidth="100.0" />
+            <Button fx:id="btnRemover" text="Remover" prefWidth="100.0" />
+            <Button text="Despesa" prefWidth="100.0" />
+        </children>
+    </HBox>
+
+    <!-- Tabela -->
+    <TableView fx:id="tableViewDividas"
+               AnchorPane.topAnchor="160.0"
+               AnchorPane.leftAnchor="30.0"
+               AnchorPane.rightAnchor="30.0"
+               AnchorPane.bottomAnchor="80.0">
+        <columns>
+            <TableColumn prefWidth="75.0" text="ID" />
+            <TableColumn prefWidth="150.0" text="Valor" />
+            <TableColumn prefWidth="150.0" text="Validade" />
+            <TableColumn prefWidth="100.0" text="Juros" />
+            <TableColumn prefWidth="225.0" text="Credor" />
+            <TableColumn prefWidth="150.0" text="Tipo" />
+            <TableColumn prefWidth="370.0" text="Descrição" />
+        </columns>
+    </TableView>
+
+    <!-- Rodapé -->
+    <HBox AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="30.0">
+        <children>
+            <Label fx:id="lblTotal" text="Total em dívidas: R$0,00">
+                <font>
+                    <Font name="System Bold" size="13.0" />
+                </font>
+            </Label>
+        </children>
+    </HBox>
+
+</AnchorPane>

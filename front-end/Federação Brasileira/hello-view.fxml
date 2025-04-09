@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane minHeight="720.0" minWidth="1280.0" prefHeight="720.0" prefWidth="1280.0" stylesheets="hello-view.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+
+   <!-- Barra superior -->
+   <Pane fx:id="topBar" prefHeight="60.0" style="-fx-background-color: linear-gradient(to right, #0044cc, #0066ff);" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <children>
+         <Label layoutX="5.0" layoutY="4.0" prefHeight="53.0" text="Federações Brasileiras" textFill="WHITE">
+            <font>
+               <Font name="System Bold" size="24.0" />
+            </font>
+         </Label>
+      </children>
+   </Pane>
+
+   <!-- Área de cadastro e busca -->
+   <AnchorPane layoutX="25.0" layoutY="130.0" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="630.0" AnchorPane.topAnchor="100.0">
+      <children>
+         <VBox alignment="CENTER" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+               <HBox alignment="CENTER" spacing="20.0">
+                  <children>
+                     <TextField prefHeight="25.0" prefWidth="279.0" promptText="Pesquisar federação..." />
+                     <Button mnemonicParsing="false" text="Buscar federação" />
+                  </children>
+               </HBox>
+               <HBox alignment="CENTER" spacing="10.0">
+                  <children>
+                     <Label text="Não possui cadastro?">
+                        <font><Font name="System Bold" size="18.0" /></font>
+                     </Label>
+                     <Label text="Cadastre-se agora mesmo">
+                        <font><Font size="18.0" /></font>
+                     </Label>
+                  </children>
+               </HBox>
+               <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="168.0" text="Cadastre-se" />
+            </children>
+         </VBox>
+      </children>
+   </AnchorPane>
+   <AnchorPane layoutX="650.0" layoutY="73.0">
+      <children>
+         <VBox alignment="CENTER" layoutY="16.0" prefHeight="606.0" prefWidth="577.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="16.0">
+            <children>
+
+               <!-- Título da tabela -->
+               <Label prefHeight="27.0" prefWidth="182.0" text="Tabela de federações">
+                  <font>
+                     <Font size="18.0" />
+                  </font>
+               </Label>
+
+               <!-- Tabela de Federações -->
+               <TableView fx:id="tabelaFederacoes" prefHeight="575.0" prefWidth="577.0">
+                  <columns>
+                     <TableColumn prefWidth="134.0" text="Nome da federação" />
+                     <TableColumn prefWidth="136.0" text="ID da federação" />
+                     <TableColumn prefWidth="142.0" text="Sigla da federação" />
+                     <TableColumn prefWidth="163.0" text="Estado federação" />
+                  </columns>
+               </TableView>
+            </children>
+         </VBox>
+      </children>
+   </AnchorPane>
+
+</AnchorPane>
