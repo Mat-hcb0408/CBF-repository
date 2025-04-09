@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+
+        <!-- Degradê no fundo -->
+        <AnchorPane prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #009C3B, #FFDF00);">
+
+        </AnchorPane>
+
+        <!-- Painéis laterais com as cores da bandeira -->
+        <Pane prefHeight="720.0" prefWidth="90.0" style="-fx-background-color: #009C3B;" />
+        <Pane layoutX="90.0" prefHeight="720.0" prefWidth="90.0" style="-fx-background-color: #002776;" />
+        <Pane layoutX="180.0" layoutY="0.0" prefHeight="720.0" prefWidth="90.0" style="-fx-background-color: #FFDF00;" />
+
+        <!-- Caixa transparente para o formulário -->
+        <VBox layoutX="750.0" layoutY="100.0" spacing="15.0" style="-fx-background-color: rgba(255,255,255,0.85); -fx-padding: 30px; -fx-background-radius: 10;">
+            <children>
+                <Label text="CRIE SUA CONTA" textFill="#002776">
+                    <font>
+                        <Font name="Arial Black" size="28.0" />
+                    </font>
+                </Label>
+
+                <Label text="Digite seu email" textFill="#009C3B" />
+                <TextField prefWidth="250.0" />
+
+                <Label text="Digite sua senha" textFill="#009C3B" />
+                <PasswordField prefWidth="250.0" />
+
+                <Label text="Confirme sua senha" textFill="#009C3B" />
+                <PasswordField prefWidth="250.0" />
+
+                <Button prefWidth="150.0" style="-fx-background-color: #002776; -fx-text-fill: white; -fx-font-weight: bold;" text="Criar Conta" />
+            </children>
+        </VBox>
+
+        <!-- Texto lateral -->
+        <Label layoutX="227.0" layoutY="338.0" text="Já tem uma conta?" textFill="white">
+            <font>
+                <Font name="System Bold" size="22.0" />
+            </font>
+        </Label>
+    </children>
+</AnchorPane>
