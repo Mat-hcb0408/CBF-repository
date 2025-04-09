@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="620.0" prefWidth="1280.0" styleClass="cbf-background" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.projeto1.HelloController">
+
+    <VBox spacing="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="20">
+
+        <Label styleClass="titulo" text="Transações" />
+
+        <TableView fx:id="tabelaTransacoes" prefHeight="453.0" prefWidth="1200.0" styleClass="cbf-tabela">
+            <columns>
+                <TableColumn prefWidth="200.0" text="Data" />
+                <TableColumn prefWidth="300.0" text="Clube" />
+                <TableColumn prefWidth="300.0" text="Jogador" />
+                <TableColumn prefWidth="200.0" text="Valor" />
+                <TableColumn prefWidth="200.0" text="Tipo" />
+            </columns>
+        </TableView>
+
+        <HBox alignment="CENTER_RIGHT" spacing="10">
+            <Button fx:id="btnNova" styleClass="cbf-botao" text="Nova Transação" />
+            <Button fx:id="btnEditar" styleClass="cbf-botao" text="Editar" />
+            <Button fx:id="btnRemover" styleClass="cbf-botao" text="Remover" />
+            <Button fx:id="btnBuscar" styleClass="cbf-botao" text="Buscar" />
+        </HBox>
+
+    </VBox>
+
+</AnchorPane>
