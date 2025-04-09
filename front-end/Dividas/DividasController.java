@@ -1,101 +1,83 @@
-package org.try_catch.cbf;
+package org.example.projeto;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
-import java.sql.*;
 
-public class TelaDividasController {
-    @FXML
-    TextField txtPesquisar;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-    @FXML
-    Button btnBuscar;
+public class DividasController implements Initializable {
 
-    @FXML
-    Button btnNova;
+    @FXML private TableView<Divida> tableViewDividas;
+    @FXML private TextField txtPesquisar;
+    @FXML private Label lblTotal;
+    @FXML private Button btnNova, btnEditar, btnRemover, btnBuscar;
 
-    @FXML
-    Button btnEditar;
+    private ObservableList<Divida> listaDividas = FXCollections.observableArrayList();
 
-    @FXML
-    Button btnRemover;
-
-    @FXML
-    Button btnDespesa;
-
-    @FXML
-    private TableView<Divida> tableViewDividas;
-
-    @FXML
-    private TableColumn<Divida, Integer> colId;
-    @FXML
-    private TableColumn<Divida, Double> colValor;
-    @FXML
-    private TableColumn<Divida, String> colValidade;
-    @FXML
-    private TableColumn<Divida, Double> colJuros;
-    @FXML
-    private TableColumn<Divida, String> colCredor;
-    @FXML
-    private TableColumn<Divida, String> colFiador;
-    @FXML
-    private TableColumn<Divida, String> colTipo;
-    @FXML
-    private TableColumn<Divida, String> colDescricao;
-
-    private ObservableList<Divida> listaDividas;
-
-    public void initialize() {
-        this.colId.setCellValueFactory(new PropertyValueFactory<>("id"));
-        this.colValor.setCellValueFactory(new PropertyValueFactory<>("valor"));
-        this.colValidade.setCellValueFactory(new PropertyValueFactory<>("validade"));
-        this.colJuros.setCellValueFactory(new PropertyValueFactory<>("juros"));
-        this.colCredor.setCellValueFactory(new PropertyValueFactory<>("credor"));
-        this.colFiador.setCellValueFactory(new PropertyValueFactory<>("fiador"));
-        this.colTipo.setCellValueFactory(new PropertyValueFactory<>("tipo"));
-        this.colDescricao.setCellValueFactory(new PropertyValueFactory<>("descricao"));
-
-        loadDataFromDatabase();
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        configurarTabela();
+        tableViewDividas.setItems(listaDividas);
+        atualizarTotal();
     }
 
-    private void loadDataFromDatabase() {
-        this.listaDividas = FXCollections.observableArrayList();
-        Connection conn = null;
-        PreparedStatement stmt = null;
-        ResultSet rs = null;
+    private void configurarTabela() {
+        // Importante: certifique-se que as colunas estejam nessa ordem no FXML
+        TableColumn<Divida, Integer> colId = (TableColumn<Divida, Integer>) tableViewDividas.getColumns().get(0);
+        TableColumn<Divida, Double> colValor = (TableColumn<Divida, Double>) tableViewDividas.getColumns().get(1);
+        TableColumn<Divida, String> colValidade = (TableColumn<Divida, String>) tableViewDividas.getColumns().get(2);
+        TableColumn<Divida, Double> colJuros = (TableColumn<Divida, Double>) tableViewDividas.getColumns().get(3);
+        TableColumn<Divida, String> colCredor = (TableColumn<Divida, String>) tableViewDividas.getColumns().get(4);
+        TableColumn<Divida, String> colTipo = (TableColumn<Divida, String>) tableViewDividas.getColumns().get(5);
+        TableColumn<Divida, String> colDescricao = (TableColumn<Divida, String>) tableViewDividas.getColumns().get(6);
 
-        try {
-            conn = Conexao.getConnection(); // método que retorna a conexão
-            String sql = "SELECT * FROM dividas"; // ajuste conforme sua tabela
-            stmt = conn.prepareStatement(sql);
-            rs = stmt.executeQuery();
+        colId.setCellValueFactory(data -> data.getValue().idProperty().asObject());
+        colValor.setCellValueFactory(data -> data.getValue().valorProperty().asObject());
+        colValidade.setCellValueFactory(data -> data.getValue().validadeProperty());
+        colJuros.setCellValueFactory(data -> data.getValue().jurosProperty().asObject());
+        colCredor.setCellValueFactory(data -> data.getValue().credorProperty());
+        colTipo.setCellValueFactory(data -> data.getValue().tipoProperty());
+        colDescricao.setCellValueFactory(data -> data.getValue().descricaoProperty());
+    }
 
-            while (rs.next()) {
-                Divida d = new Divida(
-                        rs.getInt("idDivida"),
-                        rs.getDouble("valorDividas"),
-                        rs.getString("validade"),
-                        rs.getDouble("juros"),
-                        rs.getString("credor"),
-                        rs.getString("fiador"),
-                        rs.getString("tipo"),
-                        rs.getString("descricao")
-                );
-                this.listaDividas.add(d);
-            }
+    @FXML
+    private void novaDivida() {
+        int novoId = listaDividas.size() + 1;
+        Divida nova = new Divida(novoId, 250.00, "2025-12-31", 3.5, "Banco Central", "Cartão", "Dívida de teste");
+        listaDividas.add(nova);
+        atualizarTotal();
+    }
 
-            this.tableViewDividas.setItems(this.listaDividas);
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try { if (rs != null) rs.close(); } catch (Exception ignored) {}
-            try { if (stmt != null) stmt.close(); } catch (Exception ignored) {}
-            try { if (conn != null) conn.close(); } catch (Exception ignored) {}
+    @FXML
+    private void editarDivida() {
+        Divida selecionada = tableViewDividas.getSelectionModel().getSelectedItem();
+        if (selecionada != null) {
+            selecionada.setDescricao(selecionada.getDescricao() + " (editado)");
+            tableViewDividas.refresh();
         }
     }
-}
 
+    @FXML
+    private void removerDivida() {
+        Divida selecionada = tableViewDividas.getSelectionModel().getSelectedItem();
+        if (selecionada != null) {
+            listaDividas.remove(selecionada);
+            atualizarTotal();
+        }
+    }
+
+    @FXML
+    private void buscarDividas() {
+        String termo = txtPesquisar.getText().toLowerCase();
+        tableViewDividas.setItems(listaDividas.filtered(d -> d.getDescricao().toLowerCase().contains(termo)));
+    }
+
+    private void atualizarTotal() {
+        double total = listaDividas.stream().mapToDouble(Divida::getValor).sum();
+        lblTotal.setText(String.format("Total em dívidas: R$%.2f", total));
+    }
+}
