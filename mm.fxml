@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField layoutX="514.0" layoutY="213.0" />
+      <Label layoutX="663.0" layoutY="143.0" text="Dados do jogador :">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="768.0" layoutY="416.0" text="Data do início da carreira :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="514.0" layoutY="267.0" text="Valor de mercado :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="514.0" layoutY="287.0" />
+      <Label layoutX="513.0" layoutY="340.0" text="Clube atual :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="514.0" layoutY="360.0" />
+      <TextField layoutX="511.0" layoutY="436.0" />
+      <Label layoutX="511.0" layoutY="416.0" text="Idade do jogador :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="511.0" layoutY="509.0" />
+      <Label layoutX="511.0" layoutY="489.0" text="Posição :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="511.0" layoutY="565.0" text="Pé dominante :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="511.0" layoutY="585.0" />
+      <Label layoutX="768.0" layoutY="193.0" text="Data de nascimento :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="768.0" layoutY="213.0" />
+      <Label layoutX="768.0" layoutY="267.0" text="Nacionalidade :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="768.0" layoutY="287.0" />
+      <TextField layoutX="768.0" layoutY="360.0" />
+      <Label layoutX="768.0" layoutY="340.0" text="Vencimento de contrato :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="514.0" layoutY="193.0" text="Nome do jogador :">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <TextField layoutX="768.0" layoutY="436.0" />
+      <Pane layoutX="-15.0" prefHeight="60.0" prefWidth="1280.0" style="-fx-background-color: blue;">
+         <children>
+            <Label layoutX="41.0" layoutY="11.0" text="Contratos " textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+   </children>
+</AnchorPane>
