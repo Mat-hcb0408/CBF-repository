@@ -3,22 +3,31 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="620.0" prefWidth="1280.0" styleClass="cbf-background" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.projeto1.HelloController">
+<AnchorPane fx:id="anchorPane" prefHeight="620.0" prefWidth="1280.0" styleClass="cbf-background" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.projeto1.HelloController">
 
-    <VBox spacing="20" AnchorPane.leftAnchor="20" AnchorPane.rightAnchor="20" AnchorPane.topAnchor="20">
+    <VBox spacing="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+        <HBox fx:id="topBar" styleClass="top-bar">
+            <Label styleClass="top-bar-icon" text="⚽" />
+            <Label styleClass="top-bar-title" text="TRANSAÇÕES" />
+        </HBox>
 
-        <Label styleClass="titulo" text="Transações" />
+    </VBox>
 
+    <!-- Conteúdo principal abaixo do cabeçalho -->
+    <VBox layoutX="20.0" layoutY="107.0" spacing="20" AnchorPane.bottomAnchor="-17.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="107.0">
+
+        <!-- Tabela -->
         <TableView fx:id="tabelaTransacoes" prefHeight="453.0" prefWidth="1200.0" styleClass="cbf-tabela">
             <columns>
-                <TableColumn prefWidth="200.0" text="Data" />
-                <TableColumn prefWidth="300.0" text="Clube" />
-                <TableColumn prefWidth="300.0" text="Jogador" />
-                <TableColumn prefWidth="200.0" text="Valor" />
-                <TableColumn prefWidth="200.0" text="Tipo" />
+                <TableColumn prefWidth="350.0" text="Data" />
+                <TableColumn prefWidth="450.0" text="Clube" />
+                <TableColumn prefWidth="400.0" text="Jogador" />
+                <TableColumn prefWidth="350.0" text="Valor" />
+                <TableColumn prefWidth="350.0" text="Tipo" />
             </columns>
         </TableView>
 
+        <!-- Botões -->
         <HBox alignment="CENTER_RIGHT" spacing="10">
             <Button fx:id="btnNova" styleClass="cbf-botao" text="Nova Transação" />
             <Button fx:id="btnEditar" styleClass="cbf-botao" text="Editar" />
