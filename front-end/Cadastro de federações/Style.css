@@ -1,0 +1,111 @@
+/* Estilos para o pop-up */
+.cbf-popup-container {
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-background-color: #002776; /* Azul escuro */
+}
+
+/* Estilo para o título do pop-up */
+.cbf-popup-title {
+    -fx-text-fill: #FCD116; /* Amarelo CBF */
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+/* Estilo para o cabeçalho do pop-up */
+.header-box {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #002776, #0033cc); /* Azul CBF */
+    -fx-padding: 10;
+    -fx-spacing: 10;
+    -fx-alignment: CENTER_LEFT;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 6, 0.5, 0, 2);
+    -fx-background-radius: 0 0 10 10;
+}
+
+/* Estilo para o botão de fechar */
+.cbf-popup-btn-close {
+    -fx-background-color: transparent;
+    -fx-text-fill: #FCD116;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 5 10 5 10;
+}
+
+/* Estilo para os labels */
+.cbf-popup-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #FCD116; /* Amarelo CBF */
+}
+
+/* Estilo para os campos de texto */
+.cbf-popup-field {
+    -fx-background-color: white;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 6;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 3, 0.3, 0, 1);
+}
+
+.cbf-popup-field:focused {
+    -fx-border-color: #FCD116; /* Amarelo CBF */
+    -fx-effect: dropshadow(gaussian, #FCD116, 4, 0.5, 0, 1);
+}
+
+/* Estilo para o ComboBox */
+.cbf-popup-combo {
+    -fx-background-color: white;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 6;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 3, 0.3, 0, 1);
+}
+
+.cbf-popup-combo:focused {
+    -fx-border-color: #FCD116;
+    -fx-effect: dropshadow(gaussian, #FCD116, 4, 0.5, 0, 1);
+}
+
+/* Estilo para os RadioButtons */
+.cbf-radio {
+    -fx-text-fill: #FCD116; /* Amarelo CBF */
+}
+
+/* Estilo para os botões */
+.cbf-popup-btn-save, .cbf-popup-btn-cancel {
+    -fx-background-color: #00923F; /* Verde CBF */
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 4, 0.5, 0, 2);
+    -fx-padding: 10 20 10 20;
+    -fx-cursor: hand;
+}
+
+/* Estilo para o botão de salvar */
+.cbf-popup-btn-save {
+    -fx-background-color: #00923F;
+}
+
+.cbf-popup-btn-save:hover {
+    -fx-background-color: #007A33; /* Verde escuro */
+}
+
+/* Estilo para o botão de cancelar */
+.cbf-popup-btn-cancel {
+    -fx-background-color: #D32F2F; /* Vermelho para cancelar */
+}
+
+.cbf-popup-btn-cancel:hover {
+    -fx-background-color: #9A0000; /* Vermelho escuro */
+}
+
+/* Alinhamento dos botões de ação */
+.button-box {
+    -fx-alignment: CENTER;
+    -fx-spacing: 15;
+}
