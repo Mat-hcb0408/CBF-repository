@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<?import java.net.URL?>
+<AnchorPane xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
+   <stylesheets>
+      <URL value="@style.css" />
+   </stylesheets>
+
+   <children>
+      <!-- Barra superior azul -->
+      <Pane prefHeight="60.0" style="-fx-background-color: #0000FF;">
+         <children>
+            <Label layoutX="14.0" layoutY="13.0" text="⚽ Clubes e Atletas" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+         </children>
+         <AnchorPane.topAnchor>0.0</AnchorPane.topAnchor>
+         <AnchorPane.leftAnchor>0.0</AnchorPane.leftAnchor>
+         <AnchorPane.rightAnchor>0.0</AnchorPane.rightAnchor>
+      </Pane>
+
+      <!-- Campo de pesquisa -->
+      <TextField promptText="🔎 Pesquisa" prefHeight="25.0">
+         <AnchorPane.topAnchor>70.0</AnchorPane.topAnchor>
+         <AnchorPane.leftAnchor>113.0</AnchorPane.leftAnchor>
+         <AnchorPane.rightAnchor>950.0</AnchorPane.rightAnchor>
+      </TextField>
+
+      <!-- Título "Clubes" -->
+      <Label text="Clubes">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+         <AnchorPane.topAnchor>110.0</AnchorPane.topAnchor>
+         <AnchorPane.leftAnchor>30.0</AnchorPane.leftAnchor>
+      </Label>
+
+      <!-- Painéis de clubes (lado esquerdo) -->
+      <VBox spacing="10.0">
+         <children>
+            <Pane prefHeight="170.0" style="-fx-background-color: #d3d3d3;" />
+            <Pane prefHeight="170.0" style="-fx-background-color: #d3d3d3;" />
+            <Pane prefHeight="170.0" style="-fx-background-color: #d3d3d3;" />
+            <Pane prefHeight="67.0"  style="-fx-background-color: #d3d3d3;" />
+         </children>
+         <AnchorPane.topAnchor>150.0</AnchorPane.topAnchor>
+         <AnchorPane.leftAnchor>30.0</AnchorPane.leftAnchor>
+         <AnchorPane.bottomAnchor>30.0</AnchorPane.bottomAnchor>
+         <prefWidth>520.0</prefWidth>
+      </VBox>
+
+      <!-- Painel de atletas (lado direito) -->
+      <VBox>
+         <children>
+            <!-- Título "Atletas" -->
+            <Pane prefHeight="41.0" style="-fx-background-color: #a9a9a9;">
+               <children>
+                  <Label layoutX="4.0" layoutY="2.0" text="Atletas">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </Pane>
+            <!-- Lista de atletas -->
+            <Pane style="-fx-background-color: #a9a9a9;" VBox.vgrow="ALWAYS" />
+         </children>
+         <AnchorPane.topAnchor>110.0</AnchorPane.topAnchor>
+         <AnchorPane.leftAnchor>580.0</AnchorPane.leftAnchor>
+         <AnchorPane.rightAnchor>30.0</AnchorPane.rightAnchor>
+         <AnchorPane.bottomAnchor>30.0</AnchorPane.bottomAnchor>
+      </VBox>
+
+   </children>
+</AnchorPane>
