@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1"
+            prefHeight="720.0" prefWidth="1280.0"
+            styleClass="root"
+            stylesheets="@Style.css">
+
+   <children>
+      <!-- Top Bar -->
+      <HBox fx:id="topBar" id="topBar" prefHeight="70.0" AnchorPane.topAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label id="lblTitulo" text="Contrato de Atleta Profissional" />
+         </children>
+      </HBox>
+
+      <!-- Conteúdo Principal -->
+      <VBox spacing="20" alignment="TOP_CENTER" AnchorPane.topAnchor="90.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+
+            <!-- Imagem e nome -->
+            <HBox spacing="30" alignment="CENTER">
+               <children>
+                  <ImageView fitHeight="300" fitWidth="250" preserveRatio="true"/>
+                  <VBox spacing="10">
+                     <Label text="Nome completo do atleta:" styleClass="label"/>
+                     <TextField styleClass="text-field"/>
+                     <Label text="Nacionalidade:" styleClass="label"/>
+                     <TextField styleClass="text-field"/>
+                  </VBox>
+               </children>
+            </HBox>
+
+            <!-- Informações -->
+            <GridPane hgap="20" vgap="15" alignment="CENTER">
+               <padding>
+                  <Insets top="10" right="20" bottom="10" left="20"/>
+               </padding>
+               <children>
+                  <!-- Coluna 1 -->
+                  <Label text="Data de nascimento:" GridPane.rowIndex="0" GridPane.columnIndex="0" styleClass="label"/>
+                  <TextField GridPane.rowIndex="0" GridPane.columnIndex="1" styleClass="text-field"/>
+
+                  <Label text="Idade:" GridPane.rowIndex="1" GridPane.columnIndex="0" styleClass="label"/>
+                  <TextField GridPane.rowIndex="1" GridPane.columnIndex="1" styleClass="text-field"/>
+
+                  <Label text="Posição:" GridPane.rowIndex="2" GridPane.columnIndex="0" styleClass="label"/>
+                  <TextField GridPane.rowIndex="2" GridPane.columnIndex="1" styleClass="text-field"/>
+
+                  <!-- Coluna 2 -->
+                  <Label text="Clube atual:" GridPane.rowIndex="0" GridPane.columnIndex="2" styleClass="label"/>
+                  <TextField GridPane.rowIndex="0" GridPane.columnIndex="3" styleClass="text-field"/>
+
+                  <Label text="Valor de mercado:" GridPane.rowIndex="1" GridPane.columnIndex="2" styleClass="label"/>
+                  <TextField GridPane.rowIndex="1" GridPane.columnIndex="3" styleClass="text-field"/>
+
+                  <Label text="Pé dominante:" GridPane.rowIndex="2" GridPane.columnIndex="2" styleClass="label"/>
+                  <TextField GridPane.rowIndex="2" GridPane.columnIndex="3" styleClass="text-field"/>
+               </children>
+            </GridPane>
+
+            <!-- Contrato -->
+            <HBox spacing="20" alignment="CENTER">
+               <children>
+                  <VBox spacing="10">
+                     <Label text="Data de início do contrato:" styleClass="label"/>
+                     <TextField styleClass="text-field"/>
+                  </VBox>
+                  <VBox spacing="10">
+                     <Label text="Data de vencimento do contrato:" styleClass="label"/>
+                     <TextField styleClass="text-field"/>
+                  </VBox>
+               </children>
+            </HBox>
+
+            <!-- Botões -->
+            <HBox spacing="20" alignment="CENTER">
+               <Button text="Salvar Contrato" styleClass="cbf-botao"/>
+               <Button text="Cancelar" styleClass="cbf-botao"/>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
