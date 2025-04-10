@@ -1,0 +1,35 @@
+.cbf-background {
+    -fx-background-color: #002776; /* Azul escuro */
+    -fx-padding: 20;
+}
+
+.titulo {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FCD116; /* Amarelo CBF */
+    -fx-alignment: center;
+}
+
+.cbf-tabela {
+    -fx-background-color: white;
+    -fx-border-color: #FCD116;
+    -fx-border-width: 2px;
+    -fx-table-cell-border-color: #cccccc;
+}
+
+.cbf-botao {
+    -fx-background-color: #00923F; /* Verde CBF */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 8 16 8 16;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: #cccccc;
+    -fx-border-radius: 5;
+    -fx-padding: 6;
+}
