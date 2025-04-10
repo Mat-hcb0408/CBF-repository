@@ -1,24 +1,58 @@
 package org.example.projeto1;
 
-import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
-import javafx.stage.Stage;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TableView;
 
-import java.io.IOException;
+public class HelloController {
 
-public class HelloApplication extends Application {
+        @FXML
+        private TableView<?> tabelaTransacoes;
 
-        @Override
-        public void start(Stage stage) throws Exception {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("hello-view.fxml"));
-            Scene scene = new Scene(fxmlLoader.load(), 1280, 720); // define tamanho padrão que bate com o FXML
-            stage.setTitle("Sistema de Transações da CBF"); // título mais descritivo
-            stage.setScene(scene);
-            stage.show();
+        @FXML
+        private Button btnNova;
+
+        @FXML
+        private Button btnEditar;
+
+        @FXML
+        private Button btnRemover;
+
+        @FXML
+        private Button btnBuscar;
+
+        @FXML
+        private Label lblTitulo;
+
+        // Métodos para ações dos botões (futuramente implementáveis)
+        @FXML
+        private void novaTransacao() {
+            System.out.println("Nova transação clicada");
+            // lógica aqui
         }
 
-        public static void main(String[] args) {
-            launch();
+        @FXML
+        private void editarTransacao() {
+            System.out.println("Editar clicado");
+            // lógica aqui
+        }
+
+        @FXML
+        private void removerTransacao() {
+            System.out.println("Remover clicado");
+            // lógica aqui
+        }
+
+        @FXML
+        private void buscarTransacao() {
+            System.out.println("Buscar clicado");
+            // lógica aqui
+        }
+
+        @FXML
+        public void initialize() {
+            System.out.println("Controller inicializado!");
+            // qualquer inicialização necessária aqui
         }
     }
