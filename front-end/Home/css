@@ -1,0 +1,93 @@
+/* ===== BASE GERAL ===== */
+.root {
+    -fx-background-color: linear-gradient(to bottom, #002776, #00398b);
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-text-fill: white;
+}
+
+/* ===== SCROLLPANE ===== */
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+/* ===== CONTAINERS ===== */
+.vbox, .hbox {
+    -fx-padding: 20;
+    -fx-spacing: 20;
+}
+
+/* ===== BARRA SUPERIOR ===== */
+.pane.top-bar {
+    -fx-background-color: linear-gradient(to right, #002776, #00398b);
+    -fx-background-radius: 16;
+    -fx-padding: 10 30;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.35), 10, 0.2, 0, 4);
+}
+.pane.top-bar > .label {
+    -fx-text-fill: white;
+    -fx-font-size: 30px;
+    -fx-font-weight: bold;
+}
+
+/* ===== CARTÕES ===== */
+.pane.card {
+    -fx-background-radius: 18;
+    -fx-border-radius: 18;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 12, 0.2, 0, 6);
+    -fx-cursor: hand;
+    -fx-background-insets: 0;
+    -fx-background-color: rgba(255,255,255,0.1); /* leve efeito glass */
+    -fx-border-color: rgba(255,255,255,0.2);
+    -fx-border-width: 1.5;
+    -fx-background-blur-type: gaussian;
+    -fx-transition: all 0.3s ease;
+}
+.pane.card:hover {
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.4), 16, 0.3, 0, 8);
+}
+
+/* ===== CORES TEMÁTICAS ===== */
+.card-blue    { -fx-background-color: #002776; }
+.card-yellow  { -fx-background-color: #FFE600; }
+.card-green   { -fx-background-color: #009C3B; }
+.card-white   { -fx-background-color: #F5F5F5; }
+
+.card-blue > .label,
+.card-green > .label {
+    -fx-text-fill: white;
+}
+.card-yellow > .label,
+.card-white > .label {
+    -fx-text-fill: #002776;
+}
+
+/* ===== TEXTO NOS CARTÕES ===== */
+.pane.card > .label {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+/* ===== RODAPÉ ===== */
+.footer {
+    -fx-background-color: linear-gradient(to right, #009C3B, #007f2f);
+    -fx-background-radius: 0 0 20 20;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 10, 0.3, 0, -2);
+}
+.footer > .label {
+    -fx-text-fill: white;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+/* ===== TRANSIÇÕES SUAVES ===== */
+.pane, .label {
+    -fx-transition: all 0.3s ease-in-out;
+}
