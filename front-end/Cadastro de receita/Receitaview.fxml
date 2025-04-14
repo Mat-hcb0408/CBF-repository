@@ -8,47 +8,44 @@
 
 <VBox alignment="TOP_CENTER" maxHeight="320.0" maxWidth="380.0" prefHeight="320" prefWidth="380" spacing="12" styleClass="cbf-popup-container" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
 
-  <stylesheets>
-    <URL value="@style.css" />
-  </stylesheets>
+    <stylesheets>
+        <URL value="@style.css" />
+    </stylesheets>
 
-  <padding>
-    <Insets bottom="15" left="15" right="15" top="15" />
-  </padding>
+    <padding>
+        <Insets bottom="15" left="15" right="15" top="15" />
+    </padding>
 
+    <HBox alignment="CENTER_LEFT" spacing="8" styleClass="header-box">
+        <Label styleClass="cbf-popup-title" text="Cadastro da Receita" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Button styleClass="cbf-popup-btn-close" text="✕" />
+    </HBox>
 
-  <HBox alignment="CENTER_LEFT" spacing="8" styleClass="header-box">
-    <Label styleClass="cbf-popup-title" text="Cadastro da Receita" />
-    <Region HBox.hgrow="ALWAYS" />
-    <Button styleClass="cbf-popup-btn-close" text="✕" />
-  </HBox>
+    <VBox spacing="5" alignment="CENTER_LEFT">
+        <Label styleClass="cbf-popup-label" text="Data da Receita" />
+        <TextField styleClass="cbf-popup-field" />
+    </VBox>
 
+    <VBox spacing="5" alignment="CENTER_LEFT">
+        <Label styleClass="cbf-popup-label" text="Valor da Receita" />
+        <TextField styleClass="cbf-popup-field" />
+    </VBox>
 
-  <GridPane hgap="10" vgap="10">
-    <columnConstraints>
-      <ColumnConstraints halignment="RIGHT" prefWidth="90" />
-      <ColumnConstraints hgrow="ALWAYS" prefWidth="200" />
-    </columnConstraints>
+    <VBox spacing="5" alignment="CENTER_LEFT">
+        <Label styleClass="cbf-popup-label" text="Fonte da Receita" />
+        <TextField styleClass="cbf-popup-field" />
+    </VBox>
 
-  
-    <Label styleClass="cbf-popup-label" text="Data da Receita" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-    <TextField styleClass="cbf-popup-field" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+    <VBox spacing="5" alignment="CENTER_LEFT">
+        <Label styleClass="cbf-popup-label" text="IRPJ" />
+        <TextField styleClass="cbf-popup-field" />
+    </VBox>
 
-    <Label styleClass="cbf-popup-label" text="Valor da Receita" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-    <TextField styleClass="cbf-popup-field" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-
-    
-    <Label styleClass="cbf-popup-label" text="Fonte da Receita" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-    <TextField styleClass="cbf-popup-field" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-
-    <Label styleClass="cbf-popup-label" text="IRPJ" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-    <TextField styleClass="cbf-popup-field" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-  </GridPane>
-
-
-  <HBox alignment="CENTER" spacing="15" styleClass="button-box">
-    <Button styleClass="cbf-popup-btn-save" text="Salvar Alterações" />
-    <Button styleClass="cbf-popup-btn-cancel" text="Cancelar" />
-  </HBox>
+   
+    <HBox alignment="CENTER" spacing="15" styleClass="button-box">
+        <Button styleClass="cbf-popup-btn-save" text="Salvar Alterações" />
+        <Button styleClass="cbf-popup-btn-cancel" text="Cancelar" />
+    </HBox>
 
 </VBox>
