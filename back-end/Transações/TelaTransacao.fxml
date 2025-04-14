@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="620.0" prefWidth="1280.0" styleClass="cbf-background" stylesheets="styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+
+    <VBox spacing="0" AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0" AnchorPane.topAnchor="0">
+        <HBox fx:id="topBar" styleClass="top-bar">
+            <Label styleClass="top-bar-icon" text="⚽" />
+            <Label styleClass="top-bar-title" text="TRANSAÇÕES" />
+        </HBox>
+
+    </VBox>
+
+    <!-- Conteúdo principal abaixo do cabeçalho -->
+    <VBox layoutX="20.0" layoutY="107.0" spacing="20" AnchorPane.bottomAnchor="-17.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="107.0">
+
+        <!-- Tabela -->
+        <TableView fx:id="tabelaTransacoes" prefHeight="453.0" prefWidth="1200.0" styleClass="cbf-tabela">
+            <columns>
+                <TableColumn fx:id="colTransacaoId" prefWidth="350.0" text="ID" />
+                <TableColumn fx:id="colTransacaoData" prefWidth="450.0" text="Data" />
+                <TableColumn fx:id="colTransacaoValor" prefWidth="400.0" text="Valor" />
+                <TableColumn fx:id="colTransacaoDestinatario" prefWidth="350.0" text="Destinatario" />
+                <TableColumn fx:id="colTransacaoRemetente" prefWidth="350.0" text="Remetente" />
+                <TableColumn fx:id="colTransacaoDescricao" prefWidth="350.0" text="Descrição" />
+            </columns>
+        </TableView>
+
+        <!-- Botões -->
+        <HBox alignment="CENTER_RIGHT" spacing="10">
+            <Button fx:id="btnNova" styleClass="cbf-botao" text="Nova Transação" />
+            <Button fx:id="btnEditar" styleClass="cbf-botao" text="Editar" />
+            <Button fx:id="btnRemover" styleClass="cbf-botao" text="Remover" />
+            <Button fx:id="btnBuscar" styleClass="cbf-botao" text="Buscar" />
+        </HBox>
+
+    </VBox>
+
+</AnchorPane>
