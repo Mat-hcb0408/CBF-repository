@@ -1,4 +1,4 @@
-package com.example.demo;
+package org.example.projetinho;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
