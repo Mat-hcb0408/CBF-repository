@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.collections.*?>
+<?import java.net.*?>
+<?import javafx.collections.FXCollections?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<?import java.net.URL?>
-<VBox alignment="TOP_CENTER" maxHeight="320.0" maxWidth="380.0" prefHeight="320" prefWidth="380" spacing="12" styleClass="cbf-popup-container" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="TOP_CENTER" maxHeight="590.0" maxWidth="380.0" prefHeight="590.0" prefWidth="380" spacing="12" styleClass="cbf-popup-container" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.projetinho.HelloController">
 
     <stylesheets>
         <URL value="@style.css" />
@@ -16,55 +16,42 @@
         <Insets bottom="15" left="15" right="15" top="15" />
     </padding>
 
-    <!-- Cabeçalho com alinhamento perfeito -->
-    <HBox alignment="CENTER_LEFT" maxHeight="320.0" maxWidth="380.0" spacing="8" styleClass="header-box">
+    <!-- Cabeçalho -->
+    <HBox alignment="CENTER_LEFT" spacing="8" styleClass="header-box">
         <Label styleClass="cbf-popup-title" text="Cadastro da Federação" />
         <Region HBox.hgrow="ALWAYS" />
         <Button styleClass="cbf-popup-btn-close" text="✕" />
     </HBox>
 
-    <!-- Formulário com GridPane aprimorado -->
-    <GridPane hgap="10" styleClass="form-grid" vgap="10">
-        <columnConstraints>
-            <ColumnConstraints halignment="RIGHT" hgrow="NEVER" prefWidth="90" />
-            <ColumnConstraints hgrow="ALWAYS" minWidth="180" prefWidth="200" />
-        </columnConstraints>
+    <!-- Nome da Federação -->
+    <VBox spacing="5" alignment="CENTER_LEFT">
+        <Label styleClass="cbf-popup-label" text="Nome da Federação" />
+        <TextField styleClass="cbf-popup-field" />
+    </VBox>
 
-        <rowConstraints>
-            <RowConstraints prefHeight="35" vgrow="NEVER" />
-            <RowConstraints prefHeight="35" vgrow="NEVER" />
-            <RowConstraints prefHeight="35" vgrow="NEVER" />
-            <RowConstraints prefHeight="35" vgrow="NEVER" />
-        </rowConstraints>
+    <!-- Sigla da Federação -->
+    <VBox spacing="5" alignment="CENTER_LEFT">
+        <Label styleClass="cbf-popup-label" text="Sigla da Federação" />
+        <TextField styleClass="cbf-popup-field" />
+    </VBox>
 
-        <!-- Linha 0 - Nome da Federação -->
-        <Label styleClass="cbf-popup-label" text="Nome da Federação" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-        <TextField styleClass="cbf-popup-field" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" />
-
-        <!-- Linha 1 - Sigla da Federação -->
-        <Label styleClass="cbf-popup-label" text="Sigla da Federação" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-        <TextField styleClass="cbf-popup-field" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
-
-        <!-- Linha 2 - Estado da Federação -->
-        <Label styleClass="cbf-popup-label" text="Estado da Federação" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-        <ComboBox styleClass="cbf-popup-combo" GridPane.columnIndex="1" GridPane.rowIndex="2">
+    <!-- Estado da Federação -->
+    <VBox spacing="5" alignment="CENTER_LEFT">
+        <Label styleClass="cbf-popup-label" text="Estado da Federação" />
+        <ComboBox styleClass="cbf-popup-combo">
             <items>
                 <FXCollections fx:factory="observableArrayList">
                 </FXCollections>
             </items>
         </ComboBox>
+    </VBox>
 
-        <!-- Linha 3 - Status -->
-        <Label styleClass="cbf-popup-label" text="Status:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-        <HBox alignment="CENTER_LEFT" spacing="15" GridPane.columnIndex="1" GridPane.rowIndex="3">
-            <RadioButton selected="true" styleClass="cbf-radio" text="Ativo" />
-            <RadioButton styleClass="cbf-radio" text="Inativo" />
-        </HBox>
-    </GridPane>
+    
 
-    <!-- Botões com alinhamento perfeito -->
+    <!-- Botões -->
     <HBox alignment="CENTER" spacing="15" styleClass="button-box">
         <Button styleClass="cbf-popup-btn-save" text="Salvar Alterações" />
         <Button styleClass="cbf-popup-btn-cancel" text="Cancelar" />
     </HBox>
+
 </VBox>
