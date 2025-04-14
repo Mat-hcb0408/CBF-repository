@@ -4,9 +4,9 @@
     -fx-background-color: #002776; /* Azul escuro de fundo */
 }
 
-/* Topo da interface */
+/* Topo da interface - Gradiente CBF */
 #topBar {
-    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #002776, #0033cc); /* Azul CBF */
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #002776, #0033cc);
     -fx-padding: 10;
     -fx-spacing: 20;
     -fx-alignment: CENTER_LEFT;
@@ -14,52 +14,70 @@
     -fx-background-radius: 0 0 10 10;
 }
 
-/* Título principal */
+/* Título principal - Amarelo CBF */
 #lblTitulo {
-    -fx-text-fill: #FCD116; /* Amarelo CBF */
+    -fx-text-fill: #FCD116;
     -fx-font-size: 26px;
     -fx-font-weight: bold;
     -fx-padding: 0 0 0 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 2, 0.5, 0, 1);
 }
 
-/* Painéis com sombra leve */
-.pane {
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0.3, 0, 2);
+/* Container do popup - Estilo CBF */
+.popup-container {
+    -fx-background-color: white;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.3), 10, 0, 0, 0);
 }
 
-/* Labels gerais */
-.label {
-    -fx-font-size: 16px;
+/* Cabeçalho do popup com gradiente */
+.popup-header {
+    -fx-background-color: linear-gradient(to right, #002776, #0033cc);
+    -fx-padding: 15 20;
+    -fx-background-radius: 5px 5px 0 0;
+}
+
+/* Título do popup - Amarelo CBF */
+.popup-title {
     -fx-text-fill: #FCD116;
-}
-
-/* Label do total (estilo diferente) */
-.label#lblTotal {
-    -fx-font-size: 13px;
+    -fx-font-size: 18px;
     -fx-font-weight: bold;
+}
+
+/* Botão de fechar */
+.close-button {
+    -fx-background-color: transparent;
     -fx-text-fill: #FCD116;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 0;
+}
+
+.close-button:hover {
+    -fx-text-fill: white;
 }
 
 /* Botões estilo CBF - Verde */
 .button, .cbf-botao {
-    -fx-background-color: #00923F; /* Verde CBF */
+    -fx-background-color: #00923F;
     -fx-text-fill: white;
     -fx-font-size: 14px;
     -fx-font-weight: bold;
     -fx-background-radius: 8;
     -fx-border-radius: 8;
-    -fx-border-color: transparent;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 4, 0.5, 0, 2);
-    -fx-padding: 10 20 10 20;
+    -fx-padding: 10 20;
     -fx-cursor: hand;
+    -fx-min-width: 100px;
 }
 
 .button:hover, .cbf-botao:hover {
-    -fx-background-color: #007A33; /* Verde escuro no hover */
+    -fx-background-color: #007A33;
 }
 
-/* Campos de texto */
-.text-field {
+/* Campos de formulário */
+.text-field, .date-picker, .combo-box {
     -fx-background-color: white;
     -fx-border-color: #ccc;
     -fx-border-radius: 6;
@@ -69,38 +87,48 @@
 }
 
 .text-field:focused {
-    -fx-border-color: #FCD116; /* Amarelo CBF */
+    -fx-border-color: #FCD116;
     -fx-effect: dropshadow(gaussian, #FCD116, 4, 0.5, 0, 1);
 }
 
-/* Tabela com bordas amarelas */
-.table-view, .cbf-tabela {
+/* Área de texto */
+.text-area {
     -fx-background-color: white;
-    -fx-border-color: #FCD116;
-    -fx-border-width: 2px;
+    -fx-border-color: #ccc;
     -fx-border-radius: 6;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 4, 0.5, 0, 1);
-    -fx-padding: 5;
-    -fx-table-cell-border-color: #cccccc;
+    -fx-background-radius: 6;
+    -fx-padding: 6;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 3, 0.3, 0, 1);
 }
 
-/* Cabeçalho da tabela */
-.table-view .column-header-background {
-    -fx-background-color: linear-gradient(to bottom, #f7e96b, #fcd116); /* degrade amarelo CBF */
+/* Labels do formulário */
+.input-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #555555;
 }
 
-.table-view .column-header,
-.table-view .filler {
-    -fx-size: 32px;
-}
-
-.table-view .column-header .label {
-    -fx-text-fill: #002776; /* Azul CBF no texto do cabeçalho */
+/* Botão cancelar */
+.cancel-button {
+    -fx-background-color: #e0e0e0;
+    -fx-text-fill: #555;
     -fx-font-weight: bold;
 }
-/* Garantir espaçamento e alinhamento uniforme dos botões */
-.button, .cbf-botao {
-    -fx-margin: 0 5 0 5; /* margem lateral entre botões */
-    -fx-min-width: 100px; /* tamanho mínimo para alinhar */
-    -fx-alignment: center;
+
+.cancel-button:hover {
+    -fx-background-color: #d0d0d0;
+}
+
+/* Espaçamentos */
+.button-container {
+    -fx-spacing: 15;
+    -fx-padding: 15 0 0 0;
+}
+
+.input-group {
+    -fx-spacing: 5;
+}
+
+.form-content {
+    -fx-spacing: 15;
+    -fx-padding: 20;
 }
