@@ -6,10 +6,10 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="TOP_CENTER" maxHeight="320.0" maxWidth="380.0" prefHeight="320" prefWidth="380" spacing="12" styleClass="cbf-popup-container" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane maxHeight="320.0" maxWidth="380.0" prefHeight="320" prefWidth="380" stylesheets="styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
 
-    <stylesheets>
-    </stylesheets>
+
+<VBox alignment="TOP_CENTER" maxHeight="320.0" maxWidth="380.0" prefHeight="320" prefWidth="380" spacing="12">
 
     <padding>
         <Insets bottom="15" left="15" right="15" top="15" />
@@ -41,7 +41,7 @@
         <TextField styleClass="cbf-popup-field" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" />
 
         <!-- Linha 1 - Nome -->
-        <Label styleClass="cbf-popup-label" text="Nome Completo:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <Label prefHeight="17.0" prefWidth="371.0" styleClass="cbf-popup-label" text="Nome Completo:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
         <TextField styleClass="cbf-popup-field" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
 
         <!-- Linha 2 - Tipo -->
@@ -61,8 +61,8 @@
         <!-- Linha 3 - Status -->
         <Label styleClass="cbf-popup-label" text="Status:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
         <HBox alignment="CENTER_LEFT" spacing="15" GridPane.columnIndex="1" GridPane.rowIndex="3">
-            <RadioButton selected="true" styleClass="cbf-radio" text="Ativo" />
-            <RadioButton styleClass="cbf-radio" text="Inativo" />
+            <RadioButton selected="true" styleClass="cbf-radio" text="Ativo" textFill="#fcd116" />
+            <RadioButton styleClass="cbf-radio" text="Inativo" textFill="#fcd116" />
         </HBox>
     </GridPane>
 
@@ -72,3 +72,4 @@
         <Button styleClass="cbf-popup-btn-cancel" text="Cancelar" />
     </HBox>
 </VBox>
+</StackPane>
