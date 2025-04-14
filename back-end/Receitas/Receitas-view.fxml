@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cbf1.cbf1.receitas.ReceitasController">
+
+    <!-- Barra superior azul -->
+    <Pane fx:id="topBar" prefHeight="60.0" style="-fx-background-color: blue;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <children>
+            <Label layoutX="14.0" layoutY="13.0" text="RECEITAS CBF" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="24.0" />
+                </font>
+            </Label>
+        </children>
+    </Pane>
+
+    <!-- Layout principal -->
+    <HBox spacing="40.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="80.0">
+
+        <!-- Seção de cadastro -->
+        <VBox alignment="CENTER" spacing="20.0" HBox.hgrow="ALWAYS">
+            <Label text="Busque por receitas ">
+                <font>
+                    <Font name="System Bold" size="18.0" />
+                </font>
+            </Label>
+            <TextField prefHeight="25.0" prefWidth="313.0" promptText="Pesquisar" />
+            <Label text="Cadastre a receita">
+                <font>
+                    <Font name="System Bold" size="18.0" />
+                </font>
+            <VBox.margin>
+               <Insets top="1.0" />
+            </VBox.margin>
+            <padding>
+               <Insets bottom="-10.0" top="1.0" />
+            </padding>
+            </Label>
+            <Button text="Cadastre" />
+        </VBox>
+
+        <!-- Tabela de receitas -->
+        <VBox alignment="CENTER" spacing="5.0" HBox.hgrow="ALWAYS">
+            <Label text="TABELA DE RECEITAS">
+                <font>
+                    <Font name="System Bold" size="16.0" />
+                </font>
+            </Label>
+            <TableView fx:id="tabelaReceitas" VBox.vgrow="ALWAYS">
+                <columns>
+                    <TableColumn text="ID Receita" />
+                    <TableColumn text="Data" />
+                    <TableColumn text="Valor" />
+                    <TableColumn text="Tipo" />
+                    <TableColumn text="Origem" />
+                    <TableColumn text="Obs." />
+                </columns>
+                <columnResizePolicy>
+                    <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                </columnResizePolicy>
+            </TableView>
+        </VBox>
+
+    </HBox>
+
+</AnchorPane>
