@@ -9,7 +9,7 @@
   <!-- Barra superior -->
   <Pane fx:id="topBar" prefHeight="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
     <children>
-      <Label fx:id="lblTitulo" layoutX="24.0" layoutY="13.0" text="⚽ Atletas" textFill="WHITE">
+      <Label fx:id="lblTitulo" layoutX="24.0" layoutY="13.0" text="⚽ ATLETAS" textFill="WHITE">
         <font>
           <Font name="System Bold" size="24.0" />
         </font>
@@ -35,10 +35,10 @@
   <TableView fx:id="tableViewDividas" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="30.0" AnchorPane.topAnchor="160.0">
     <columns>
       <TableColumn fx:id="colId" prefWidth="75.0" text="ID" />
-      <TableColumn fx:id="colValor" prefWidth="150.0" text="NOME" />
-      <TableColumn fx:id="colValidade" prefWidth="150.0" text="DATA NASCIMENTO" />
-      <TableColumn fx:id="colJuros" prefWidth="100.0" text="APELIDO" />
-      <TableColumn fx:id="colCredor" prefWidth="225.0" text="NUMERAÇÃO" />
+      <TableColumn fx:id="colValor" prefWidth="150.0" text="Nome" />
+      <TableColumn fx:id="colValidade" prefWidth="150.0" text="Data de nascimento" />
+      <TableColumn fx:id="colJuros" prefWidth="100.0" text="Apelido" />
+      <TableColumn fx:id="colCredor" prefWidth="225.0" text="Numeração" />
     </columns>
     <columnResizePolicy>
       <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
