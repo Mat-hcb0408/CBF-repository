@@ -1,0 +1,79 @@
+.root {
+    -fx-font-family: "Segoe UI";
+    -fx-base: #f0f0f0;
+}
+
+.header-box {
+    -fx-background-color: #006b3f;
+    -fx-padding: 15px;
+}
+
+.title-label {
+    -fx-text-fill: white;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+.tabela-classificacao {
+    -fx-font-size: 14px;
+}
+
+.coluna-posicao {
+    -fx-alignment: CENTER;
+}
+
+.coluna-time {
+    -fx-alignment: CENTER_LEFT;
+    -fx-font-weight: bold;
+}
+
+.coluna-pontos {
+    -fx-alignment: CENTER;
+    -fx-font-weight: bold;
+    -fx-text-fill: #006b3f;
+}
+
+.coluna-jogos, .coluna-vitorias, .coluna-empates, .coluna-derrotas {
+    -fx-alignment: CENTER;
+}
+
+.coluna-gols {
+    -fx-alignment: CENTER;
+}
+
+.coluna-aproveitamento {
+    -fx-alignment: CENTER;
+}
+
+.footer-box {
+    -fx-background-color: #e0e0e0;
+    -fx-padding: 10px;
+}
+
+.update-label {
+    -fx-font-style: italic;
+    -fx-text-fill: #555555;
+}
+
+.update-button {
+    -fx-background-color: #006b3f;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 5px 15px;
+}
+
+.update-button:hover {
+    -fx-background-color: #005a35;
+}
+
+.table-row-cell:even {
+    -fx-background-color: #f9f9f9;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: white;
+}
+
+.table-row-cell:empty {
+    -fx-background-color: white;
+}
