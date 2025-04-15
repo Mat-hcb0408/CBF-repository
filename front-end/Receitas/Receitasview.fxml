@@ -5,14 +5,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.cbf1.cbf1.receitas.ReceitasController">
+<AnchorPane xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.projetinho.HelloController" stylesheets="@style.css" styleClass="root">
 
-    <!-- Barra superior azul -->
-    <Pane fx:id="topBar" prefHeight="60.0" style="-fx-background-color: blue;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+    <!-- Barra superior azul com ID e estilo -->
+    <Pane fx:id="topBar" id="topBar" prefHeight="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
         <children>
-            <Label layoutX="14.0" layoutY="13.0" text="RECEITAS CBF" textFill="WHITE">
+            <Label fx:id="lblTitulo" id="lblTitulo" layoutX="14.0" layoutY="13.0" text="RECEITAS CBF">
                 <font>
-                    <Font name="System Bold" size="24.0" />
+                    <Font name="Segoe UI Bold" size="24.0" />
                 </font>
             </Label>
         </children>
@@ -23,31 +23,32 @@
 
         <!-- Seção de cadastro -->
         <VBox alignment="CENTER" spacing="20.0" HBox.hgrow="ALWAYS">
-            <Label text="Busque por receitas ">
+            <Label text="Busque por receitas " styleClass="label">
                 <font>
-                    <Font name="System Bold" size="18.0" />
+                    <Font name="Segoe UI Bold" size="18.0" />
                 </font>
             </Label>
-            <TextField prefHeight="25.0" prefWidth="313.0" promptText="Pesquisar" fx:id="txtPesquisarReceitas" />
-            <Label text="Cadastre a receita">
+            <TextField fx:id="txtPesquisarReceitas" promptText="Pesquisar" styleClass="text-field" />
+
+            <Label text="Cadastre a receita" styleClass="label">
                 <font>
-                    <Font name="System Bold" size="18.0" />
+                    <Font name="Segoe UI Bold" size="18.0" />
                 </font>
-            <VBox.margin>
-               <Insets top="1.0" />
-            </VBox.margin>
-            <padding>
-               <Insets bottom="-10.0" top="1.0" />
-            </padding>
+                <VBox.margin>
+                    <Insets top="1.0" />
+                </VBox.margin>
+                <padding>
+                    <Insets bottom="-10.0" top="1.0" />
+                </padding>
             </Label>
-            <Button text="Cadastre" fx:id="bttnCadastroReceitas" />
+            <Button fx:id="bttnCadastroReceitas" text="Cadastre" styleClass="cbf-botao" />
         </VBox>
 
         <!-- Tabela de receitas -->
         <VBox alignment="CENTER" spacing="5.0" HBox.hgrow="ALWAYS">
-            <Label text="TABELA DE RECEITAS">
+            <Label text="TABELA DE RECEITAS" styleClass="label">
                 <font>
-                    <Font name="System Bold" size="16.0" />
+                    <Font name="Segoe UI Bold" size="16.0" />
                 </font>
             </Label>
             <TableView fx:id="tabelaReceitas" VBox.vgrow="ALWAYS">
@@ -56,7 +57,7 @@
                     <TableColumn text="Data" fx:id="colDataReceitas"/>
                     <TableColumn text="Valor" fx:id="colValorReceitas"/>
                     <TableColumn text="Tipo" fx:id="colTipoReceitas"/>
-                    <TableColumn text="fonte" fx:id="colFonteReceitas"/>
+                    <TableColumn text="Fonte" fx:id="colFonteReceitas"/>
                     <TableColumn text="Descrição" fx:id="colDescricaoReceitas"/>
                 </columns>
                 <columnResizePolicy>
