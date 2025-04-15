@@ -1,64 +1,37 @@
-
+/* Fundo azul estilo CBF */
 .root {
     -fx-font-family: 'Segoe UI', sans-serif;
     -fx-background-color: #002776;
-
-#topBar {
-    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #002776, #0033cc); /* Azul CBF */
-    -fx-padding: 10;
-    -fx-spacing: 20;
-    -fx-alignment: CENTER_LEFT;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 6, 0.5, 0, 2);
-    -fx-background-radius: 0 0 10 10;
 }
 
+/* Barra superior */
+#topBar {
+    -fx-background-color: linear-gradient(to right, #002776, #004aad);
+    -fx-padding: 15px;
+    -fx-alignment: center;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 6, 0.5, 0, 2);
+}
 
 #lblTitulo {
-    -fx-text-fill: #FCD116; 
-    -fx-font-size: 26px;
+    -fx-text-fill: #FCD116;
+    -fx-font-size: 28px;
     -fx-font-weight: bold;
-    -fx-padding: 0 0 0 20;
 }
 
-.pane {
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0.3, 0, 2);
-}
-
+/* Labels */
 .label {
-    -fx-font-size: 16px;
     -fx-text-fill: #FCD116;
-}
-
-.label#lblTotal {
-    -fx-font-size: 13px;
-    -fx-font-weight: bold;
-    -fx-text-fill: #FCD116;
-}
-
-.button, .cbf-botao {
-    -fx-background-color: #00923F; 
-    -fx-text-fill: white;
     -fx-font-size: 14px;
-    -fx-font-weight: bold;
-    -fx-background-radius: 8;
-    -fx-border-radius: 8;
-    -fx-border-color: transparent;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 4, 0.5, 0, 2);
-    -fx-padding: 10 20 10 20;
-    -fx-cursor: hand;
 }
 
-.button:hover, .cbf-botao:hover {
-    -fx-background-color: #007A33; 
-}
-
-
+/* Campos de texto */
 .text-field {
     -fx-background-color: white;
     -fx-border-color: #ccc;
     -fx-border-radius: 6;
     -fx-background-radius: 6;
     -fx-padding: 6;
+    -fx-min-width: 200px;
     -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 3, 0.3, 0, 1);
 }
 
@@ -67,34 +40,17 @@
     -fx-effect: dropshadow(gaussian, #FCD116, 4, 0.5, 0, 1);
 }
 
-
-.table-view, .cbf-tabela {
-    -fx-background-color: white;
-    -fx-border-color: #FCD116;
-    -fx-border-width: 2px;
-    -fx-border-radius: 6;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 4, 0.5, 0, 1);
-    -fx-padding: 5;
-    -fx-table-cell-border-color: #cccccc;
-}
-
-
-.table-view .column-header-background {
-    -fx-background-color: linear-gradient(to bottom, #f7e96b, #fcd116); 
-}
-
-.table-view .column-header,
-.table-view .filler {
-    -fx-size: 32px;
-}
-
-.table-view .column-header .label {
-    -fx-text-fill: #002776;
+/* Botões estilo CBF */
+.cbf-botao {
+    -fx-background-color: #00923F;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
     -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
 }
 
-
-    -fx-margin: 0 5 0 5; 
-    -fx-min-width: 100px; 
-    -fx-alignment: center;
+.cbf-botao:hover {
+    -fx-background-color: #007A33;
 }
