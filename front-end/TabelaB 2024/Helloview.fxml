@@ -16,8 +16,8 @@
     <center>
         <TableView fx:id="tabelaClassificacao" styleClass="tabela-classificacao">
             <columns>
-                <TableColumn fx:id="colPosicao" minWidth="50" prefWidth="139.0" styleClass="coluna-posicao" text="POS" />
-                <TableColumn fx:id="colTime" minWidth="121.0" prefWidth="121.0" styleClass="coluna-time" text="TIME" />
+                <TableColumn fx:id="colPosicao" minWidth="50" prefWidth="132.0" styleClass="coluna-posicao" text="POS" />
+                <TableColumn fx:id="colTime" minWidth="121.0" prefWidth="128.0" styleClass="coluna-time" text="TIME" />
                 <TableColumn fx:id="colPontos" minWidth="50" styleClass="coluna-pontos" text="PTS" />
                 <TableColumn fx:id="colJogos" minWidth="40" text="J" />
                 <TableColumn fx:id="colVitorias" minWidth="40" text="V" />
@@ -37,7 +37,7 @@
             <HBox alignment="CENTER" spacing="20">
                 <HBox alignment="CENTER_LEFT" spacing="10">
                     <Label style="-fx-font-weight: bold;" />
-                    <Label styleClass="posicao-libertadores" text="Classificação seria A" />
+                    <Label styleClass="posicao-Classificação" text="Classificação seria A" />
                     <Label styleClass="posicao-rebaixamento" text="Rebaixamento" />
                 </HBox>
                 <Label styleClass="update-label" text="Última atualização: --/--/----" />
