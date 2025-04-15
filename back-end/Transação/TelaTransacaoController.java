@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.sql.Connection;
@@ -43,7 +44,15 @@ public class TelaTransacaoController {
     private ObservableList<Transacao> listaTransacoes;
 
     @FXML
+    private TextField txtPesquisar;
+
+    @FXML
     public void initialize() {
+
+        txtPesquisar.textProperty().addListener((observable, oldValue, newValue) -> {
+            pesquisarTransacoes(newValue);
+        });
+
         colTransacaoId.setCellValueFactory(new PropertyValueFactory<>("idTransacao"));
         colTransacaoData.setCellValueFactory(new PropertyValueFactory<>("dataTransacoes"));
         colTransacaoValor.setCellValueFactory(new PropertyValueFactory<>("valorTransacoes"));
@@ -87,7 +96,6 @@ public class TelaTransacaoController {
     }
 
 
-
     private void loadDataFromDatabase() {
         listaTransacoes = FXCollections.observableArrayList();
         Connection conn = null;
@@ -117,9 +125,67 @@ public class TelaTransacaoController {
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {
-            try { if (rs != null) rs.close(); } catch (Exception ignored) {}
-            try { if (stmt != null) stmt.close(); } catch (Exception ignored) {}
-            try { if (conn != null) conn.close(); } catch (Exception ignored) {}
+            try {
+                if (rs != null) rs.close();
+            } catch (Exception ignored) {
+            }
+            try {
+                if (stmt != null) stmt.close();
+            } catch (Exception ignored) {
+            }
+            try {
+                if (conn != null) conn.close();
+            } catch (Exception ignored) {
+            }
+        }
+    }
+
+    //PESQUISA
+    private void pesquisarTransacoes(String filtro) {
+        ObservableList<Transacao> resultados = FXCollections.observableArrayList();
+
+        // A consulta SQL agora está corretamente estruturada
+        String sql = "SELECT * FROM transacoes WHERE " +
+                "CAST(idTransacao AS CHAR) LIKE ? OR " +
+                "CAST(valorTransacoes AS CHAR) LIKE ? OR " +
+                "dataTransacoes LIKE ? OR " +
+                "destinatarioTransacoes LIKE ? OR " +
+                "remetenteTransacoes LIKE ? OR " +
+                "descricaoTransacoes LIKE ?";
+
+        try (Connection conn = Conexao.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+            // Passando 6 parâmetros para o PreparedStatement
+            for (int i = 1; i <= 6; i++) {
+                stmt.setString(i, "%" + filtro + "%");
+            }
+
+            // Executa a consulta
+            ResultSet rspesquisa = stmt.executeQuery();
+
+            // Limpar os resultados anteriores
+            resultados.clear();
+
+            // Adiciona as transações que correspondem ao filtro
+            while (rspesquisa.next()) {
+                Transacao t = new Transacao(
+                        rspesquisa.getInt("idTransacao"),
+                        rspesquisa.getString("dataTransacoes"),
+                        rspesquisa.getDouble("valorTransacoes"),
+                        rspesquisa.getString("destinatarioTransacoes"),
+                        rspesquisa.getString("remetenteTransacoes"),
+                        rspesquisa.getString("descricaoTransacoes")
+                );
+                resultados.add(t);
+            }
+
+            // Atualiza a tabela com os novos resultados filtrados
+            tabelaTransacoes.setItems(resultados);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
     }
 }
+
