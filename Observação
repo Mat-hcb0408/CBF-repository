@@ -4,17 +4,17 @@ O propósito do banco de dados é centralizar e organizar dados sobre dívidas, 
 
 Aqui está um resumo das tabelas e seus propósitos:
 
-Dividas: Armazena informações sobre dívidas que podem estar associadas aos clubes, incluindo valor, juros, validade, credores, fiadores, tipo de dívida e descrição.
+-Dividas: Armazena informações sobre dívidas que podem estar associadas aos clubes, incluindo valor, juros, validade, credores, fiadores, tipo de dívida e descrição.
 
-Receitas: Registra as receitas financeiras recebidas, incluindo a data da receita, o valor, a fonte, o imposto de renda (IRPJ) e uma descrição.
+-Receitas: Registra as receitas financeiras recebidas, incluindo a data da receita, o valor, a fonte, o imposto de renda (IRPJ) e uma descrição.
 
-Transacoes: Detalha as transações financeiras realizadas entre partes, com informações sobre o valor, destinatário, remetente e descrição.
+-Transacoes: Detalha as transações financeiras realizadas entre partes, com informações sobre o valor, destinatário, remetente e descrição.
 
 Despesas: Armazena informações sobre as despesas financeiras do clube, incluindo data, valor, destinatário, remetente e descrição.
 
 ContratosFinanceiros: Registra os contratos financeiros dos clubes, com datas de início e fim, associados e uma descrição do contrato.
 
-Federacoes: Contém dados sobre as federações de futebol, incluindo nome, sigla e estado de origem.
+-Federacoes: Contém dados sobre as federações de futebol, incluindo nome, sigla e estado de origem.
 
 Clubes: Armazena informações sobre os clubes de futebol, como nome, ano de fundação, estado e o escudo (imagem) do clube. Também há uma referência para a federação à qual o clube pertence.
 
