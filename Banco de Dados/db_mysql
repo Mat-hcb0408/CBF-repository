@@ -440,15 +440,15 @@ VALUES
     ('Paysandu', 1914, 'Pará', 'https://upload.wikimedia.org/wikipedia/pt/thumb/2/2f/PaysanduSC.png/120px-PaysanduSC.png', 13),
     ('Botafogo-SP', 1918, 'São Paulo', 'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Botafogo_Futebol_Clube_%28Ribeir%C3%A3o_Preto%29_logo_%282021%29.png/120px-Botafogo_Futebol_Clube_%28Ribeir%C3%A3o_Preto%29_logo_%282021%29.png', 2),
     ('Chapecoense', 1973, 'Santa Catarina', 'https://upload.wikimedia.org/wikipedia/pt/thumb/e/e4/Novo_escudo_da_Associa%C3%A7%C3%A3o_Chapecoense_de_Futebol.png/120px-Novo_escudo_da_Associa%C3%A7%C3%A3o_Chapecoense_de_Futebol.png', 8),
-    ('CRB', 1912, 'Alagoas', '', 14),
-    ('Ponte Preta', 1900, 'São Paulo', '', 2),
-    ('Ituano', 1947, 'São Paulo', '', 2),
-    ('Brusque', 1987, 'Santa Catarina', '', 8),
-    ('Guarani', 1911, 'São Paulo', '', 2),
-    ('Sampaio Corrêa', 1923, 'Maranhão', '', 15),
-    ('Tombense', 1914, 'Minas Gerais', '', 6),
-    ('Londrina', 1956, 'Paraná', '', 7),
-    ('ABC', 1915, 'Rio Grande do Norte', '', 16);
+    ('CRB', 1912, 'Alagoas', 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/CRB_logo.svg/250px-CRB_logo.svg.png', 14),
+    ('Ponte Preta', 1900, 'São Paulo', 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Escudo_Oficial_Ponte_Preta.png/120px-Escudo_Oficial_Ponte_Preta.png', 2),
+    ('Ituano', 1947, 'São Paulo', 'https://upload.wikimedia.org/wikipedia/pt/thumb/2/28/ItuanoFC.png/120px-ItuanoFC.png', 2),
+    ('Brusque', 1987, 'Santa Catarina', 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/BFC_Escudo_Novo-1920w.png/120px-BFC_Escudo_Novo-1920w.png', 8),
+    ('Guarani', 1911, 'São Paulo', 'https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Guarani_FC_%28E%29_-_SP.svg/120px-Guarani_FC_%28E%29_-_SP.svg.png', 2),
+    ('Sampaio Corrêa', 1923, 'Maranhão', 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Sampaio_Corr%C3%AAa_FC.png/120px-Sampaio_Corr%C3%AAa_FC.png', 15),
+    ('Tombense', 1914, 'Minas Gerais', 'https://upload.wikimedia.org/wikipedia/pt/thumb/8/85/TombenseFC.png/120px-TombenseFC.png', 6),
+    ('Londrina', 1956, 'Paraná', 'https://upload.wikimedia.org/wikipedia/pt/thumb/8/83/LondrinaEC.png/120px-LondrinaEC.png', 7),
+    ('ABC', 1915, 'Rio Grande do Norte', 'https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/ABC_FC_%28E%29_-_RN.svg/120px-ABC_FC_%28E%29_-_RN.svg.png', 16);
 
 
 
