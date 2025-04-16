@@ -1,0 +1,64 @@
+.root {
+    -fx-background-color: linear-gradient(to bottom, #0B2A70, #021740);
+    -fx-padding: 0;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+.top-bar {
+    -fx-background-color: #001F5B;
+    -fx-padding: 10 20;
+    -fx-background-radius: 10;
+}
+
+.top-title {
+    -fx-text-fill: white;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+.menu-grid {
+    -fx-padding: 20;
+}
+
+.menu-card {
+    -fx-background-color: #0055A5;
+    -fx-background-radius: 15;
+    -fx-pref-height: 160px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 10, 0.5, 0, 4);
+    -fx-cursor: hand;
+}
+
+.menu-card:hover {
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-background-color: #0077CC;
+}
+
+.menu-card.highlight {
+    -fx-background-color: #FFD700;
+    -fx-text-fill: #000;
+}
+
+.menu-label {
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.footer {
+    -fx-background-color: #ffffff22;
+    -fx-background-radius: 10;
+    -fx-padding: 15;
+    -fx-spacing: 5;
+}
+
+.footer-title {
+    -fx-text-fill: white;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+.footer-placeholder {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+}
