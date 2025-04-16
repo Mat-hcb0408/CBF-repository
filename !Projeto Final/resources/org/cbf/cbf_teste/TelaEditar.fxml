@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane maxHeight="320.0" maxWidth="380.0" prefHeight="320" prefWidth="380" stylesheets="styles.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+
+
+<VBox alignment="TOP_CENTER" maxHeight="320.0" maxWidth="380.0" prefHeight="320" prefWidth="380" spacing="12">
+
+    <padding>
+        <Insets bottom="15" left="15" right="15" top="15" />
+    </padding>
+
+    <!-- Cabeçalho com alinhamento perfeito -->
+    <HBox alignment="CENTER_LEFT" maxHeight="320.0" maxWidth="380.0" spacing="8" styleClass="header-box">
+        <Label styleClass="cbf-popup-title" text="Editor CBF" />
+        <Region HBox.hgrow="ALWAYS" />
+        <Button styleClass="cbf-popup-btn-close" text="✕" />
+    </HBox>
+
+    <!-- Formulário com GridPane aprimorado -->
+    <GridPane hgap="10" styleClass="form-grid" vgap="10">
+        <columnConstraints>
+            <ColumnConstraints halignment="RIGHT" hgrow="NEVER" prefWidth="90" />
+            <ColumnConstraints hgrow="ALWAYS" minWidth="180" prefWidth="200" />
+        </columnConstraints>
+
+        <rowConstraints>
+            <RowConstraints prefHeight="35" vgrow="NEVER" />
+            <RowConstraints prefHeight="35" vgrow="NEVER" />
+            <RowConstraints prefHeight="35" vgrow="NEVER" />
+            <RowConstraints prefHeight="35" vgrow="NEVER" />
+        </rowConstraints>
+
+        <!-- Linha 0 - Código -->
+        <Label styleClass="cbf-popup-label" text="Código CBF:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <TextField styleClass="cbf-popup-field" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="0" />
+
+        <!-- Linha 1 - Nome -->
+        <Label prefHeight="17.0" prefWidth="371.0" styleClass="cbf-popup-label" text="Nome Completo:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <TextField styleClass="cbf-popup-field" GridPane.columnIndex="1" GridPane.hgrow="ALWAYS" GridPane.rowIndex="1" />
+
+        <!-- Linha 2 - Tipo -->
+        <Label styleClass="cbf-popup-label" text="Tipo:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <ComboBox styleClass="cbf-popup-combo" GridPane.columnIndex="1" GridPane.rowIndex="2">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Clube" />
+                    <String fx:value="Jogador" />
+                    <String fx:value="Árbitro" />
+                    <String fx:value="Comissão Técnica" />
+                    <String fx:value="Estádio" />
+                </FXCollections>
+            </items>
+        </ComboBox>
+
+        <!-- Linha 3 - Status -->
+        <Label styleClass="cbf-popup-label" text="Status:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+        <HBox alignment="CENTER_LEFT" spacing="15" GridPane.columnIndex="1" GridPane.rowIndex="3">
+            <RadioButton selected="true" styleClass="cbf-radio" text="Ativo" textFill="#fcd116" />
+            <RadioButton styleClass="cbf-radio" text="Inativo" textFill="#fcd116" />
+        </HBox>
+    </GridPane>
+
+    <!-- Botões com alinhamento perfeito -->
+    <HBox alignment="CENTER" spacing="15" styleClass="button-box">
+        <Button styleClass="cbf-popup-btn-save" text="Salvar Alterações" />
+        <Button styleClass="cbf-popup-btn-cancel" text="Cancelar" />
+    </HBox>
+</VBox>
+</StackPane>
