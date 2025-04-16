@@ -18,7 +18,7 @@ public class HelloApplication extends Application {
             FXMLLoader fxmlLoader = new FXMLLoader(fxmlUrl);
             Parent root = fxmlLoader.load();
 
-            stage.setTitle("Brasileirão 2024");
+            stage.setTitle("Brasileirão 2023");
             stage.setScene(new Scene(root, 1000, 650));
             stage.show();
         }
