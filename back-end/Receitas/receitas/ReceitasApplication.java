@@ -11,6 +11,7 @@ import java.util.Locale;
 public class ReceitasApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
+        Locale.setDefault(new Locale("pt","BR"));
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/com/cbf1/cbf1/Receitas-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
         stage.setTitle("Receitas");
