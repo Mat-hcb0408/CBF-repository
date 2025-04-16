@@ -6,6 +6,9 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+
 import java.sql.*;
 
 import java.sql.Connection;
@@ -49,11 +52,33 @@ public class ClubesController {
 
         this.colIdClubes.setCellValueFactory(new PropertyValueFactory<>("id_clube"));
         this.colNomeClubes.setCellValueFactory(new PropertyValueFactory<>("nome_clube"));
+        this.colFundacaoClubes.setCellValueFactory(new PropertyValueFactory<>("fundacao_clube"));
         this.colEstadoClubes.setCellValueFactory(new PropertyValueFactory<>("estado_clube"));
         this.colEscudoClubes.setCellValueFactory(new PropertyValueFactory<>("escudo_clube"));
-        this.colFundacaoClubes.setCellValueFactory(new PropertyValueFactory<>("fundacao_clube"));
         this.colIdFedClubes.setCellValueFactory(new PropertyValueFactory<>("idFed_clube"));
 
+        this.colEscudoClubes.setCellFactory(column -> new TableCell<Clubes, String>() {
+            private final ImageView imageView = new ImageView();
+
+            {
+                imageView.setFitHeight(30);
+                imageView.setFitWidth(30);
+                imageView.setPreserveRatio(true);
+            }
+
+            @Override
+            protected void updateItem(String imageUrl, boolean empty) {
+                super.updateItem(imageUrl, empty);
+
+                if (empty || imageUrl == null || imageUrl.isEmpty()) {
+                    setGraphic(null);
+                } else {
+                    Image image = new Image(imageUrl, true);
+                    imageView.setImage(image);
+                    setGraphic(imageView);
+                }
+            }
+        });
         loadFromDatabase();
     }
 
@@ -73,8 +98,8 @@ public class ClubesController {
             Clubes c=new Clubes(
                     rs.getInt("idClube"),
                     rs.getString("nome_clube"),
-                    rs.getString("estado"),
                     rs.getInt("anoFundacao"),
+                    rs.getString("estado"),
                     rs.getString("escudo"),
                     rs.getInt("idFederacao")
             );
@@ -89,12 +114,12 @@ public class ClubesController {
     private void pesquisarClubes(String filtro) {
         ObservableList<Clubes> resultados = FXCollections.observableArrayList();
 
-        String query="SELECT * FROM clube WHERE " +
+        String query="SELECT * FROM clubes WHERE " +
                 "CAST(idClube AS CHAR) like ? or " +
                 "nome_clube LIKE ? or " +
-                "dataNascimento like ? or " +
-                "apelido like ? or "+
-                "numeracao like ?";
+                "anoFundacao like ? or " +
+                "estado like ? or "+
+                "idFederacao like ?";
 
         try (Connection conn= Conexao.getConnection();
              PreparedStatement stmt = conn.prepareStatement(query)) {
@@ -107,11 +132,12 @@ public class ClubesController {
 
             while (rs.next()){
                 Clubes c=new Clubes(
-                        rs.getInt("IdAtleta"),
-                        rs.getString("nome"),
-                        rs.getString("dataNascimento"),
-                        rs.getString("apelido"),
-                        rs.getInt("numeracao")
+                        rs.getInt("idClube"),
+                        rs.getString("nome_clube"),
+                        rs.getInt("anoFundacao"),
+                        rs.getString("estado"),
+                        rs.getString("escudo"),
+                        rs.getInt("idFederacao")
                 );
                 resultados.add(c);
             }

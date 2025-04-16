@@ -8,7 +8,7 @@ public class Clubes {
     private final Integer idFed_clube;
     private final String escudo_clube;
 
-    public Clubes(Integer id_clube, String nome_clube, Integer fundacao_clube, String estado_clube, Integer idFed_clube, String escudo_clube) {
+    public Clubes(Integer id_clube, String nome_clube, Integer fundacao_clube, String estado_clube, String escudo_clube, Integer idFed_clube) {
         this.id_clube = id_clube;
         this.nome_clube = nome_clube;
         this.fundacao_clube = fundacao_clube;
@@ -33,11 +33,11 @@ public class Clubes {
         return estado_clube;
     }
 
-    public Integer getIdFed_clube() {
-        return idFed_clube;
+    public String getEscudo_clube() {
+        return escudo_clube;
     }
 
-    public Integer getEscudo_clube() {
-        return escudo_clube;
+    public Integer getIdFed_clube() {
+        return idFed_clube;
     }
 }
