@@ -6,7 +6,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="TOP_CENTER" maxHeight="590.0" maxWidth="380.0" prefHeight="590.0" prefWidth="380" spacing="12" styleClass="cbf-popup-container" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.projetinho.HelloController">
+<VBox alignment="TOP_CENTER" maxHeight="590.0" maxWidth="380.0" prefHeight="590.0" prefWidth="380" spacing="12" styleClass="cbf-popup-container" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.projetinho.HelloController">
 
     <stylesheets>
         <URL value="@style.css" />
