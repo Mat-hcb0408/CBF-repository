@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1">
 
     <!-- Barra superior -->
     <Pane fx:id="topBar" prefHeight="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -40,6 +40,7 @@
     </TableView>
 
     <!-- Botão Remover -->
-    <Button fx:id="btnRemover" layoutX="212.0" layoutY="71.0" prefHeight="40.0" prefWidth="113.0" text="Remover" />
+    <Button fx:id="btnRemover" layoutX="328.0" layoutY="71.0" prefHeight="40.0" prefWidth="113.0" text="Remover" />
+   <Button fx:id="btnRemover1" layoutX="208.0" layoutY="71.0" prefHeight="40.0" prefWidth="113.0" text="Adicionar" />
 
 </AnchorPane>
