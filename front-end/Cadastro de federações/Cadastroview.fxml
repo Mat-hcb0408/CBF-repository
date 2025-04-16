@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import java.net.*?>
-<?import javafx.collections.FXCollections?>
+<?import javafx.collections.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox alignment="TOP_CENTER" maxHeight="590.0" maxWidth="380.0" prefHeight="590.0" prefWidth="380" spacing="12" styleClass="cbf-popup-container" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.projetinho.HelloController">
+<VBox alignment="TOP_CENTER" maxHeight="590.0" maxWidth="380.0" prefHeight="590.0" prefWidth="380" spacing="12" styleClass="cbf-popup-container" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.projetinho.HelloController">
 
     <stylesheets>
         <URL value="@style.css" />
@@ -20,23 +20,22 @@
     <HBox alignment="CENTER_LEFT" spacing="8" styleClass="header-box">
         <Label styleClass="cbf-popup-title" text="Cadastro da Federação" />
         <Region HBox.hgrow="ALWAYS" />
-        <Button styleClass="cbf-popup-btn-close" text="✕" />
     </HBox>
 
     <!-- Nome da Federação -->
-    <VBox spacing="5" alignment="CENTER_LEFT">
+    <VBox alignment="CENTER_LEFT" spacing="5">
         <Label styleClass="cbf-popup-label" text="Nome da Federação" />
         <TextField styleClass="cbf-popup-field" />
     </VBox>
 
     <!-- Sigla da Federação -->
-    <VBox spacing="5" alignment="CENTER_LEFT">
+    <VBox alignment="CENTER_LEFT" spacing="5">
         <Label styleClass="cbf-popup-label" text="Sigla da Federação" />
         <TextField styleClass="cbf-popup-field" />
     </VBox>
 
     <!-- Estado da Federação -->
-    <VBox spacing="5" alignment="CENTER_LEFT">
+    <VBox alignment="CENTER_LEFT" spacing="5">
         <Label styleClass="cbf-popup-label" text="Estado da Federação" />
         <ComboBox styleClass="cbf-popup-combo">
             <items>
@@ -46,7 +45,7 @@
         </ComboBox>
     </VBox>
 
-    
+
 
     <!-- Botões -->
     <HBox alignment="CENTER" spacing="15" styleClass="button-box">
