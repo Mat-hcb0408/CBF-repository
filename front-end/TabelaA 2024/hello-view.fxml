@@ -7,7 +7,7 @@
 
     <top>
         <HBox alignment="CENTER" styleClass="header-box">
-            <Label styleClass="title-label" text="BRASILEIRÃO 2023 - SÉRIE A" />
+            <Label styleClass="title-label" text="BRASILEIRÃO 2024 - SÉRIE A" />
         </HBox>
     </top>
 
