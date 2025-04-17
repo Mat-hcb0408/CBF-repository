@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane prefHeight="720.0" prefWidth="1280.0" styleClass="root" stylesheets="@../css/home.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.cbf.cbf.controller.TelaHomeController">
+
+    <!-- Topo -->
+    <top>
+        <Pane fx:id="topBar" prefHeight="60.0" styleClass="top-bar">
+            <children>
+                <Label fx:id="lblTitulo" layoutX="24.0" layoutY="13.0" text="⚽ CLUBES" textFill="WHITE">
+                    <font>
+                        <Font name="System Bold" size="24.0" />
+                    </font>
+                </Label>
+            </children>
+        </Pane>
+    </top>
+
+    <!-- Centro (grade com os botões) -->
+    <center>
+        <GridPane fx:id="menuGrid" hgap="20" style="-fx-padding: 20;" vgap="20">
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS" />
+                <ColumnConstraints hgrow="ALWAYS" />
+                <ColumnConstraints hgrow="ALWAYS" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints vgrow="ALWAYS" />
+                <RowConstraints vgrow="ALWAYS" />
+            </rowConstraints>
+
+            <!-- Botões -->
+            <Button fx:id="transacoesButton" maxHeight="Infinity" maxWidth="Infinity" onAction="#irParaTransacoes" styleClass="menu-card" text="📊 Transações" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+
+            <Button fx:id="clubesAtletasButton" maxHeight="Infinity" maxWidth="Infinity" onAction="#irParaClubesAtletas" styleClass="menu-card" text="🏃 Clubes e Atletas" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+            <Button fx:id="contratosButton" maxHeight="Infinity" maxWidth="Infinity" onAction="#irParaContratos" styleClass="menu-card" text="📑 Contratos" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+
+            <Button fx:id="dividasDespesasButton" maxHeight="Infinity" maxWidth="Infinity" onAction="#irParaDividas" styleClass="menu-card" text="💰 Dívidas &amp; Despesas" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+
+            <Button fx:id="federacaoButton" maxHeight="Infinity" maxWidth="Infinity" onAction="#irParaFederacao" styleClass="menu-card" text="🏛 Federação" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+            <Button fx:id="receitaButton" maxHeight="Infinity" maxWidth="Infinity" onAction="#irParaReceita" styleClass="menu-card" text="📈 Receita" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        </GridPane>
+    </center>
+
+    <!-- Rodapé -->
+    <!-- Rodapé (quatro botões menores) -->
+    <bottom>
+        <HBox alignment="CENTER" spacing="10" style="-fx-padding: 10;">
+            <children>
+                <Button fx:id="configButton" onAction="#irParaBrasileiraoSerieA2024" prefHeight="60" styleClass="botao-rodape" text="Brasileirão Serie A 2024">
+                    <HBox.hgrow>ALWAYS</HBox.hgrow>
+                </Button>
+                <Button fx:id="sobreButton" onAction="#irParaBrasileiraoSerieB2024" prefHeight="60" styleClass="botao-rodape" text="Brasileirão Serie B 2024">
+                    <HBox.hgrow>ALWAYS</HBox.hgrow>
+                </Button>
+                <Button fx:id="ajudaButton" onAction="#irParaBrasileiraoSerieA2023" prefHeight="60" styleClass="botao-rodape" text="Brasileirão Serie A 2023">
+                    <HBox.hgrow>ALWAYS</HBox.hgrow>
+                </Button>
+                <Button fx:id="sairButton" onAction="#irParaBrasileiraoSerieB2023" prefHeight="60" styleClass="botao-rodape" text="Brasileirão Serie B 2023">
+                    <HBox.hgrow>ALWAYS</HBox.hgrow>
+                </Button>
+            </children>
+        </HBox>
+    </bottom>
+
+
+</BorderPane>

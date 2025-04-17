@@ -1,0 +1,114 @@
+.root {
+    -fx-background-color: linear-gradient(to bottom, #0B2A70, #021740);
+    -fx-padding: 0;
+    -fx-font-family: "Segoe UI", sans-serif;
+}
+
+.top-bar {
+    -fx-background-color: #001F5B;
+    -fx-padding: 10 20;
+    -fx-background-radius: 10;
+}
+
+.top-title {
+    -fx-text-fill: white;
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+}
+
+.menu-grid {
+    -fx-padding: 20;
+}
+
+.button.menu-card {
+    -fx-background-color: #0055A5;
+    -fx-background-radius: 15;
+    -fx-pref-height: 160px;
+    -fx-pref-width: 100%;
+    -fx-text-fill: white;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 10, 0.5, 0, 4);
+    -fx-cursor: hand;
+    -fx-alignment: center;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+}
+
+.button.menu-card:hover {
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-background-color: #0077CC;
+}
+
+.footer {
+    -fx-background-color: #ffffff22;
+    -fx-background-radius: 10;
+    -fx-padding: 15;
+    -fx-spacing: 5;
+}
+
+.footer-title {
+    -fx-text-fill: white;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+.footer-placeholder {
+    -fx-text-fill: white;
+    -fx-font-size: 16px;
+}
+
+.btn-voltar {
+    -fx-background-color: #1f4e79;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-background-radius: 20px;
+    -fx-cursor: hand;
+    -fx-border-color: white;
+    -fx-border-width: 2px;
+    -fx-border-radius: 20px;
+    -fx-padding: 0;
+}
+
+.btn-voltar:hover {
+    -fx-background-color: #2f5e9f;
+}
+
+.icon-voltar {
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+}
+
+.botao-rodape {
+    -fx-background-color: #0055A5;
+    -fx-background-radius: 15;
+    -fx-pref-height: 60px;
+    -fx-text-fill: white;
+    -fx-font-size: 16px; /* Ajuste o tamanho da fonte, caso necessário */
+    -fx-font-weight: bold;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 10, 0.5, 0, 4);
+    -fx-cursor: hand;
+    -fx-alignment: center;
+    -fx-padding: 0;
+    -fx-border-color: transparent;
+    -fx-hgrow: ALWAYS; /* Garante que os botões cresçam de forma proporcional */
+}
+
+.botao-rodape:hover {
+    -fx-scale-x: 1.03;
+    -fx-scale-y: 1.03;
+    -fx-background-color: #0077CC;
+}
+
+.footer {
+    -fx-background-color: #ffffff22;
+    -fx-background-radius: 10;
+    -fx-padding: 15;
+    -fx-spacing: 10px; /* Adiciona um espaçamento fixo entre os botões */
+    -fx-alignment: CENTER; /* Alinha os botões no centro */
+}
+
+
+
+
