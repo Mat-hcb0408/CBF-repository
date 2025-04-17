@@ -10,7 +10,7 @@ import java.io.IOException;
 public class CBFApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(CBFApplication.class.getResource("Home.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(CBFApplication.class.getResource("/fxml/Home.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 1280, 720);
         /*
         scene.getStylesheets().add(getClass().getResource("styles.css").toExternalForm());
