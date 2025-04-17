@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="720.0" prefWidth="1280.0" styleClass="cbf-background" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.cbf.cbf.Controller.TelaTransacaoController">
+
+    <!-- Barra superior -->
+    <Pane fx:id="topBar" prefHeight="60.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <children>
+            <Label fx:id="lblTitulo" layoutX="24.0" layoutY="13.0" text="⚽ TRANSAÇÕES" textFill="WHITE">
+                <font>
+                    <Font name="System Bold" size="24.0" />
+                </font>
+            </Label>
+        </children>
+    </Pane>
+
+    <!-- Conteúdo principal abaixo do cabeçalho -->
+    <VBox layoutX="20.0" layoutY="107.0" spacing="20" AnchorPane.bottomAnchor="-17.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="107.0">
+
+        <!-- Botões -->
+        <HBox alignment="CENTER_LEFT" spacing="10">
+            <Button fx:id="btnNova" styleClass="cbf-botao" text="Nova Transação" />
+            <Button fx:id="btnEditar" styleClass="cbf-botao" text="Editar" />
+            <Button fx:id="btnRemover" styleClass="cbf-botao" text="Remover" />
+        </HBox>
+
+        <!-- Tabela -->
+        <TableView fx:id="tabelaTransacoes" prefHeight="500.0" prefWidth="1240.0" styleClass="cbf-tabela">
+            <columns>
+                <TableColumn fx:id="colTransacaoId" prefWidth="350.0" text="ID" />
+                <TableColumn fx:id="colTransacaoData" prefWidth="450.0" text="Data" />
+                <TableColumn fx:id="colTransacaoValor" prefWidth="400.0" text="Valor" />
+                <TableColumn fx:id="colTransacaoDestinatario" prefWidth="350.0" text="Destinatario" />
+                <TableColumn fx:id="colTransacaoRemetente" prefWidth="350.0" text="Remetente" />
+                <TableColumn fx:id="colTransacaoDescricao" prefWidth="350.0" text="Descrição" />
+            </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+        </TableView>
+
+    </VBox>
+
+          <!-- Campo de busca e botões superiores -->
+    <TextField fx:id="txtPesquisar" layoutX="20.0" layoutY="68.0" prefHeight="25.0" prefWidth="384.0" promptText="🔍 Pesquisar..." />
+
+</AnchorPane>
