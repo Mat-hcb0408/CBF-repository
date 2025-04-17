@@ -1,0 +1,130 @@
+/* Fundo verde estilo CBF */
+.root {
+    -fx-font-family: 'Segoe UI', sans-serif;
+    -fx-background-color: #006400; /* Verde escuro de fundo */
+}
+
+/* Topo da interface */
+#topBar {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 100%, #006400, #28a745); /* Verde CBF */
+    -fx-padding: 10;
+    -fx-spacing: 20;
+    -fx-alignment: CENTER_LEFT;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 6, 0.5, 0, 2);
+    -fx-background-radius: 0 0 10 10;
+    -fx-pref-width: 100%; /* Tornar a largura 100% da tela */
+    -fx-pref-height: 60px; /* Altura fixada, mas pode ser ajustada */
+}
+
+/* Título principal */
+#lblTitulo {
+    -fx-text-fill: #F0E68C; /* Amarelo claro */
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 0 20;
+    -fx-translate-x: 20px; /* Espaço a partir da borda esquerda */
+}
+
+/* Painéis com sombra leve */
+.pane {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 5, 0.3, 0, 2);
+}
+
+/* Labels gerais */
+.label {
+    -fx-font-size: 16px;
+    -fx-text-fill: #F0E68C;
+}
+
+/* Label do total (estilo diferente) */
+.label#lblTotal {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #F0E68C;
+}
+
+/* Botões estilo CBF - Verde */
+.button, .cbf-botao {
+    -fx-background-color: #28a745; /* Verde CBF */
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 4, 0.5, 0, 2);
+    -fx-padding: 10 20 10 20;
+    -fx-cursor: hand;
+}
+
+.button:hover, .cbf-botao:hover {
+    -fx-background-color: #218838; /* Verde escuro no hover */
+}
+
+/* Campos de texto */
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: #ccc;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 6;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 3, 0.3, 0, 1);
+}
+
+.text-field:focused {
+    -fx-border-color: #F0E68C; /* Amarelo claro */
+    -fx-effect: dropshadow(gaussian, #F0E68C, 4, 0.5, 0, 1);
+}
+
+/* Tabela com bordas amarelas */
+.table-view, .cbf-tabela {
+    -fx-background-color: white;
+    -fx-border-color: #F0E68C;
+    -fx-border-width: 2px;
+    -fx-border-radius: 6;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 4, 0.5, 0, 1);
+    -fx-padding: 5;
+    -fx-table-cell-border-color: #cccccc;
+}
+
+/* Cabeçalho da tabela */
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #a1dba3, #28a745); /* Degradê verde claro */
+}
+
+.table-view .column-header,
+.table-view .filler {
+    -fx-size: 32px;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #006400; /* Verde escuro no texto do cabeçalho */
+}
+
+/* Garantir espaçamento e alinhamento uniforme dos botões */
+.button, .cbf-botao {
+    -fx-margin: 0 5 0 5; /* Margem lateral entre botões */
+    -fx-min-width: 100px; /* Tamanho mínimo para alinhar */
+    -fx-alignment: center;
+}
+
+/* Botão Voltar */
+.btn-voltar {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 28px;
+    -fx-background-radius: 50%;
+    -fx-border-color: #F0E68C;
+    -fx-border-width: 2px;
+    -fx-padding: 10;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 6, 0.5, 0, 2);
+    -fx-min-width: 55px;
+    -fx-min-height: 55px;
+}
+
+.btn-voltar:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+    -fx-border-color: #F0E68C;
+    -fx-border-width: 3px;
+}
